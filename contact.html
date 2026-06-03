@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | FINGER DIGITAL LTD.</title>
+    <style>
+        :root { --primary-navy: #0D233A; --accent-gold: #F4B41A; --neutral-slate: #4A5568; --bg-clean: #F8FAFC; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--neutral-slate); background-color: var(--bg-clean); padding-bottom: 60px; }
+        header { background-color: var(--primary-navy); color: white; padding: 25px; text-align: center; border-bottom: 4px solid var(--accent-gold); }
+        header h1 { margin: 0; }
+        nav { background-color: #1A365D; padding: 12px; text-align: center; }
+        nav ul { list-style: none; margin: 0; padding: 0; }
+        nav li { display: inline; margin: 0 20px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        nav a:hover { color: var(--accent-gold); }
+        main { max-width: 600px; margin: 40px auto; padding: 0 20px; }
+        form { background: white; padding: 30px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--primary-navy); }
+        input, textarea { width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: var(--primary-navy); color: white; padding: 12px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem; }
+        button:hover { background-color: #1A365D; }
+        footer { background-color: var(--primary-navy); color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <header><h1>FINGER DIGITAL</h1></header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Connect With An IT Expert</h2>
+        <p>Submit your enterprise service inquiry below, and our technical architecture team will follow up within 1 business day.</p>
+        
+        <!-- Form configured safely with no backend database needed -->
+        <form action="https://formspree.io/f/placeholder" method="POST">
+            <div class="form-group">
+                <label for="name">Company Name / Contact Person</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Corporate Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Project Requirements Overview</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Submit Request</button>
+        </form>
+    </main>
+    <footer><p>&copy; 2026 FINGER DIGITAL LTD. All Rights Reserved.</p></footer>
+</body>
+</html>
