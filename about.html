@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | FINGER DIGITAL LTD.</title>
+    <style>
+        :root { 
+            --primary-dark: #3A3F44; 
+            --tech-green: #5CB839; 
+            --text-muted: #555E66; 
+            --bg-clean: #F8FAFC; 
+        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--text-muted); background-color: var(--bg-clean); display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: var(--primary-dark); color: white; padding: 25px; text-align: center; border-bottom: 4px solid var(--tech-green); }
+        header h1 { margin: 0; }
+        nav { background-color: #2B2F33; padding: 12px; text-align: center; }
+        nav ul { list-style: none; margin: 0; padding: 0; }
+        nav li { display: inline; margin: 0 20px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        nav a:hover { color: var(--tech-green); }
+        main { flex: 1; max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 35px; text-align: left; }
+        .about-box { background: white; padding: 25px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); border-left: 4px solid var(--tech-green); }
+        .about-box h3 { margin-top: 0; color: var(--primary-dark); }
+        footer { background-color: var(--primary-dark); color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <header><h1>FINGER DIGITAL</h1></header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>About FINGER DIGITAL</h2>
+        <p style="max-width: 750px; margin: 0 auto; line-height: 1.6; font-size: 1.1rem;">FINGER DIGITAL LTD. bridges the gap between complex software architecture and smooth business performance. We believe engineering enterprise systems should be straightforward, highly secure, and accessible—making enterprise digitalization as easy as lifting a finger.</p>
+        
+        <div class="about-grid">
+            <div class="about-box">
+                <h3>Our Mission</h3>
+                <p>To deliver advanced cloud modernization, AI optimization patterns, and defensive infrastructure blueprints that scale smoothly alongside modern growth mandates.</p>
+            </div>
+            <div class="about-box">
+                <h3>Why Choose Us</h3>
+                <p>We systematically map solution delivery pipelines to avoid resource waste, bringing high-end secure operations capability directly to enterprise engineering teams.</p>
+            </div>
+        </div>
+    </main>
+    <footer><p>&copy; 2026 FINGER DIGITAL LTD. All Rights Reserved.</p></footer>
+</body>
+</html>
