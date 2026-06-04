@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | FINGER DIGITAL LTD.</title>
     <style>
-        :root { --primary-navy: #0D233A; --accent-gold: #F4B41A; --neutral-slate: #4A5568; --bg-clean: #F8FAFC; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--neutral-slate); background-color: var(--bg-clean); padding-bottom: 60px; }
-        header { background-color: var(--primary-navy); color: white; padding: 25px; text-align: center; border-bottom: 4px solid var(--accent-gold); }
+        :root { 
+            --primary-dark: #3A3F44; 
+            --tech-green: #5CB839; 
+            --text-muted: #555E66; 
+            --bg-clean: #F8FAFC; 
+        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--text-muted); background-color: var(--bg-clean); display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: var(--primary-dark); color: white; padding: 25px; text-align: center; border-bottom: 4px solid var(--tech-green); }
         header h1 { margin: 0; }
-        nav { background-color: #1A365D; padding: 12px; text-align: center; }
+        nav { background-color: #2B2F33; padding: 12px; text-align: center; }
         nav ul { list-style: none; margin: 0; padding: 0; }
         nav li { display: inline; margin: 0 20px; }
         nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
-        nav a:hover { color: var(--accent-gold); }
-        main { max-width: 600px; margin: 40px auto; padding: 0 20px; }
-        form { background: white; padding: 30px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        nav a:hover { color: var(--tech-green); }
+        main { flex: 1; max-width: 600px; margin: 40px auto; padding: 0 20px; }
+        form { background: white; padding: 30px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 4px solid var(--primary-dark); }
         .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--primary-navy); }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: var(--primary-dark); }
         input, textarea { width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 4px; box-sizing: border-box; }
-        button { background-color: var(--primary-navy); color: white; padding: 12px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem; }
-        button:hover { background-color: #1A365D; }
-        footer { background-color: var(--primary-navy); color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; font-size: 0.9rem; }
+        input:focus, textarea:focus { border-color: var(--tech-green); outline: none; }
+        button { background-color: var(--tech-green); color: white; padding: 12px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem; transition: background 0.2s; }
+        button:hover { background-color: #4a992c; }
+        footer { background-color: var(--primary-dark); color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -37,8 +43,8 @@
         <h2>Connect With An IT Expert</h2>
         <p>Submit your enterprise service inquiry below, and our technical architecture team will follow up within 1 business day.</p>
         
-        <!-- Form configured safely with no backend database needed -->
-        <form action="https://formspree.io/f/placeholder" method="POST">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
             <div class="form-group">
                 <label for="name">Company Name / Contact Person</label>
                 <input type="text" id="name" name="name" required>
