@@ -20,6 +20,14 @@
         nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
         nav a:hover { color: var(--tech-green); }
         main { flex: 1; max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        
+        /* About Us Section Styles */
+        .about-section { margin-top: 50px; padding-top: 40px; border-top: 2px solid #E2E8F0; text-align: left; }
+        .about-section h3 { color: var(--primary-dark); font-size: 1.8rem; text-align: center; margin-bottom: 20px; }
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 20px; }
+        .about-box { background: white; padding: 20px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); border-left: 4px solid var(--tech-green); }
+        .about-box h4 { margin-top: 0; color: var(--primary-dark); }
+
         .cta-btn { display: inline-block; background-color: var(--tech-green); color: white; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 4px; margin-top: 20px; transition: background 0.2s; }
         .cta-btn:hover { background-color: #4a992c; }
         footer { background-color: var(--primary-dark); color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
@@ -31,13 +39,30 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
     <main>
         <h2>Enterprise IT Solutions & Infrastructure Design</h2>
         <p>Providing robust, scalable IT deployments, custom artificial intelligence systems, and professional managed operations optimized for business scaling.</p>
         <a href="contact.html" class="cta-btn">Request a Consultation</a>
+
+        <!-- Embedded About Us Section -->
+        <section id="about" class="about-section">
+            <h3>About Us</h3>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;">FINGER DIGITAL LTD. bridges the gap between complex software architecture and smooth business performance. We believe engineering enterprise systems should be straightforward, highly secure, and accessible.</p>
+            <div class="about-grid">
+                <div class="about-box">
+                    <h4>Our Mission</h4>
+                    <p>To deliver advanced cloud modernization, AI optimization patterns, and defensive infrastructure blueprints that scale smoothly alongside modern growth mandates.</p>
+                </div>
+                <div class="about-box">
+                    <h4>Why Choose Us</h4>
+                    <p>We systematically map solution delivery pipelines to avoid resource waste, bringing high-end secure operations capability directly to engineering teams.</p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer><p>&copy; 2026 FINGER DIGITAL LTD. All Rights Reserved.</p></footer>
 </body>
