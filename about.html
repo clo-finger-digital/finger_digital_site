@@ -8,46 +8,64 @@
         :root { 
             --primary-dark: #3A3F44; 
             --tech-green: #5CB839; 
-            --text-muted: #555E66; 
-            --bg-clean: #F8FAFC; 
+            --bg-clean: #FFFFFF;
+            --border-light: #EFEFEF;
+            --text-main: #111111;
+            --text-muted: #666666;
         }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--text-muted); background-color: var(--bg-clean); display: flex; flex-direction: column; min-height: 100vh; }
-        header { background-color: var(--primary-dark); color: white; padding: 25px; text-align: center; border-bottom: 4px solid var(--tech-green); }
-        header h1 { margin: 0; }
-        nav { background-color: #2B2F33; padding: 12px; text-align: center; }
-        nav ul { list-style: none; margin: 0; padding: 0; }
-        nav li { display: inline; margin: 0 20px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif; background-color: var(--bg-clean); color: var(--text-main); line-height: 1.5; }
+        header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-light); z-index: 1000; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+        .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: var(--text-main); }
+        .logo span { color: var(--tech-green); }
+        nav ul { list-style: none; display: flex; gap: 35px; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; }
         nav a:hover { color: var(--tech-green); }
-        main { flex: 1; max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 35px; text-align: left; }
-        .about-box { background: white; padding: 25px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.03); border-left: 4px solid var(--tech-green); }
-        .about-box h3 { margin-top: 0; color: var(--primary-dark); }
-        footer { background-color: var(--primary-dark); color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
+        .nav-cta { background: var(--primary-dark); color: white; padding: 10px 22px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+        
+        .container { max-width: 1300px; margin: 0 auto; padding: 100px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .about-left h2 { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; }
+        .about-right { padding-top: 15px; }
+        .about-right p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6; }
+        
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px solid var(--border-light); padding-top: 40px; }
+        .stat-box h4 { font-size: 2.5rem; font-weight: 800; color: var(--text-main); letter-spacing: -1px; }
+        .stat-box p { font-size: 0.95rem; color: var(--text-muted); margin-top: 5px; }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem; position: relative; margin-top: auto; }
+        @media (max-width: 768px) { .container { grid-template-columns: 1fr; gap: 40px; } }
     </style>
 </head>
 <body>
-    <header><h1>FINGER DIGITAL</h1></header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>About FINGER DIGITAL</h2>
-        <p style="max-width: 750px; margin: 0 auto; line-height: 1.6; font-size: 1.1rem;">FINGER DIGITAL LTD. bridges the gap between complex software architecture and smooth business performance. We believe engineering enterprise systems should be straightforward, highly secure, and accessible—making enterprise digitalization as easy as lifting a finger.</p>
-        
-        <div class="about-grid">
-            <div class="about-box">
-                <h3>Our Mission</h3>
-                <p>To deliver advanced cloud modernization, AI optimization patterns, and defensive infrastructure blueprints that scale smoothly alongside modern growth mandates.</p>
-            </div>
-            <div class="about-box">
-                <h3>Why Choose Us</h3>
-                <p>We systematically map solution delivery pipelines to avoid resource waste, bringing high-end secure operations capability directly to enterprise engineering teams.</p>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">FINGER DIGITAL<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="nav-cta">Book a Call</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class="about-left">
+            <h2>Crafting visually stable infrastructure experiences.</h2>
+        </div>
+        <div class="about-right">
+            <p>FINGER DIGITAL LTD. bridges the gaps between complex systems integration and corporate ease-of-use patterns. We systematically map execution workflows to eliminate system architecture drag parameters completely.</p>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h4>3+ Pillars</h4>
+                    <p>AI Systems, IT Design & Secure Operational Deployment Infrastructure.</p>
+                </div>
+                <div class="stat-box">
+                    <h4>0.0% drag</h4>
+                    <p>Streamlined data execution pipelines optimized for zero resource overhead waste.</p>
+                </div>
             </div>
         </div>
     </main>
