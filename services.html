@@ -8,48 +8,67 @@
         :root { 
             --primary-dark: #3A3F44; 
             --tech-green: #5CB839; 
-            --text-muted: #555E66; 
-            --bg-clean: #F8FAFC; 
+            --bg-clean: #FFFFFF;
+            --border-light: #EFEFEF;
+            --text-main: #111111;
+            --text-muted: #666666;
         }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--text-muted); background-color: var(--bg-clean); display: flex; flex-direction: column; min-height: 100vh; }
-        header { background-color: var(--primary-dark); color: white; padding: 25px; text-align: center; border-bottom: 4px solid var(--tech-green); }
-        header h1 { margin: 0; }
-        nav { background-color: #2B2F33; padding: 12px; text-align: center; }
-        nav ul { list-style: none; margin: 0; padding: 0; }
-        nav li { display: inline; margin: 0 20px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif; background-color: var(--bg-clean); color: var(--text-main); line-height: 1.5; }
+        header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-light); z-index: 1000; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+        .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; text-decoration: none; color: var(--text-main); }
+        .logo span { color: var(--tech-green); }
+        nav ul { list-style: none; display: flex; gap: 35px; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; }
         nav a:hover { color: var(--tech-green); }
-        main { flex: 1; max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-        .card { background: white; padding: 25px; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--tech-green); }
-        .card h3 { color: var(--primary-dark); margin-top: 0; }
-        footer { background-color: var(--primary-dark); color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
+        .nav-cta { background: var(--primary-dark); color: white; padding: 10px 22px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+        
+        .container { max-width: 1300px; margin: 0 auto; padding: 100px 40px; }
+        .page-title { font-size: 3rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 60px; }
+        
+        /* Thegem Clean Services Grid Layout */
+        .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); border-top: 1px solid var(--border-light); border-left: 1px solid var(--border-light); }
+        .service-item { padding: 50px; border-bottom: 1px solid var(--border-light); border-right: 1px solid var(--border-light); transition: background 0.2s; }
+        .service-item:hover { background: #FAFDF9; }
+        .service-num { font-size: 0.85rem; font-weight: 700; color: var(--tech-green); display: block; margin-bottom: 20px; font-family: monospace; }
+        .service-item h3 { font-size: 1.7rem; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.5px; }
+        .service-item p { color: var(--text-muted); line-height: 1.6; }
+        
+        footer { border-top: 1px solid var(--border-light); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <header><h1>FINGER DIGITAL</h1></header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-    <main>
-        <h2>Our Core Capabilities</h2>
-        <div class="services-grid">
-            <div class="card">
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">FINGER DIGITAL<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="nav-cta">Book a Call</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <h2 class="page-title">Services Overview</h2>
+        <div class="services-list">
+            <div class="service-item">
+                <span class="service-num">/ 01</span>
                 <h3>AI Code Integration</h3>
-                <p>Custom artificial intelligence deployment designed to streamline engineering operations and enhance software automation structures.</p>
+                <p>Custom artificial intelligence pipelines designed to streamline industrial automation frameworks and enhance production system data models.</p>
             </div>
-            <div class="card">
+            <div class="service-item">
+                <span class="service-num">/ 02</span>
                 <h3>IT Solution Design</h3>
-                <p>Architectural structural mapping and physical deployment strategies tailored for corporate scalability and long-term hardware optimization.</p>
+                <p>Architectural layout topology mapping and secure network layer configuration tailored directly for long-term scalability targets.</p>
             </div>
-            <div class="card">
-                <h3>Managed SOC / IT Services</h3>
-                <p>Continuous network layer protection, continuous status monitoring, and enterprise information security engineering protocols.</p>
+            <div class="service-item">
+                <span class="service-num">/ 03</span>
+                <h3>Security Operation Center</h3>
+                <p>Continuous data tracking monitoring systems, encryption perimeter engineering, and responsive technical protection services.</p>
             </div>
         </div>
     </main>
