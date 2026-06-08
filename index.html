@@ -3,42 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINGER DIGITAL LTD. | Enterprise IT & AI Solutions</title>
+    <title>Thegem | FINGER DIGITAL LTD.</title>
     <style>
         :root { 
             --primary-dark: #3A3F44; 
             --tech-green: #5CB839; 
-            --text-muted: #555E66; 
-            --bg-clean: #F8FAFC; 
+            --bg-clean: #FFFFFF;
+            --border-light: #EFEFEF;
+            --text-main: #111111;
+            --text-muted: #666666;
         }
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: var(--text-muted); background-color: var(--bg-clean); display: flex; flex-direction: column; min-height: 100vh; }
-        header { background-color: var(--primary-dark); color: white; padding: 25px; text-align: center; border-bottom: 4px solid var(--tech-green); }
-        header h1 { margin: 0; letter-spacing: 1px; font-weight: 700; }
-        nav { background-color: #2B2F33; padding: 12px; text-align: center; }
-        nav ul { list-style: none; margin: 0; padding: 0; }
-        nav li { display: inline; margin: 0 20px; }
-        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif; background-color: var(--bg-clean); color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+        
+        /* Thegem Minimal Header Layout */
+        header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-light); z-index: 1000; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+        .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; display: flex; align-items: center; text-decoration: none; color: var(--text-main); }
+        .logo span { color: var(--tech-green); margin-left: 2px; }
+        nav ul { list-style: none; display: flex; gap: 35px; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
         nav a:hover { color: var(--tech-green); }
-        main { flex: 1; max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; }
-        .cta-btn { display: inline-block; background-color: var(--tech-green); color: white; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 4px; margin-top: 20px; transition: background 0.2s; }
-        .cta-btn:hover { background-color: #4a992c; }
-        footer { background-color: var(--primary-dark); color: white; text-align: center; padding: 15px; font-size: 0.9rem; }
+        .nav-cta { background: var(--primary-dark); color: white; padding: 10px 22px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; }
+        .nav-cta:hover { background: var(--tech-green); }
+
+        /* Thegem Editorial Hero Section */
+        .hero { max-width: 1300px; margin: 0 auto; padding: 120px 40px 80px 40px; text-align: left; }
+        .hero-tag { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--tech-green); margin-bottom: 20px; display: inline-block; }
+        .hero h2 { font-size: 4rem; font-weight: 800; letter-spacing: -2px; line-height: 1.1; color: var(--text-main); max-width: 900px; margin-bottom: 30px; }
+        .hero p { font-size: 1.25rem; color: var(--text-muted); max-width: 600px; margin-bottom: 40px; line-height: 1.6; }
+
+        /* Multi-column Formula Section */
+        .formula-section { border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); background: #FCFCFC; }
+        .formula-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .formula-box { padding: 60px 40px; border-right: 1px solid var(--border-light); }
+        .formula-box:last-child { border-right: none; }
+        .formula-box span { font-size: 0.9rem; font-weight: 700; color: var(--tech-green); text-transform: uppercase; }
+        .formula-box h3 { font-size: 1.7rem; font-weight: 700; margin: 15px 0; color: var(--text-main); letter-spacing: -0.5px; }
+        .formula-box p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
+
+        footer { border-top: 1px solid var(--border-light); padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+        @media (max-width: 768px) { .hero h2 { font-size: 2.5rem; } nav { display: none; } }
     </style>
 </head>
 <body>
-    <header><h1>FINGER DIGITAL</h1></header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">FINGER DIGITAL<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="nav-cta">Book a Call</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <main>
-        <h2>Enterprise IT Solutions & Infrastructure Design</h2>
-        <p>Providing robust, scalable IT deployments, custom artificial intelligence systems, and professional managed operations optimized for business scaling.</p>
-        <a href="contact.html" class="cta-btn">Request a Consultation</a>
+        <section class="hero">
+            <span class="hero-tag">The Web Agency</span>
+            <h2>We transform your perception into excellent architecture.</h2>
+            <p>Providing robust, structural IT solution layouts, custom machine learning integrations, and managed protection systems built for scaling enterprises.</p>
+        </section>
+        <section class="formula-section">
+            <div class="formula-grid">
+                <div class="formula-box">
+                    <span>01. We Drill Down</span>
+                    <h3>Understand business framework data needs.</h3>
+                    <p>We analyze system friction parameters to construct solid technical layouts before writing a single line of integrated software code.</p>
+                </div>
+                <div class="formula-box">
+                    <span>02. You Provide Needs</span>
+                    <h3>Relax, have coffee, and wait.</h3>
+                    <p>Provide us with your operational bottlenecks and scale requirements while our system architecture team builds a resilient environment.</p>
+                </div>
+                <div class="formula-box">
+                    <span>03. Us Together</span>
+                    <h3>Level up your brand identity.</h3>
+                    <p>Achieve continuous operation status and algorithmic optimization structures natively designed to capture organizational visibility.</p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer><p>&copy; 2026 FINGER DIGITAL LTD. All Rights Reserved.</p></footer>
 </body>
