@@ -30,6 +30,235 @@
       top: 0;
       left: 0;
       width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    .brand-link { display: flex; align-items: center; text-decoration: none; }
+    .brand-logo { height: 42px; width: auto; display: block; object-fit: contain; }
+    nav { display: flex; align-items: center; }
+    nav a {
+      text-decoration: none;
+      color: var(--brand-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-left: 35px;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    nav a.active { color: var(--brand-green); }
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--brand-green);
+    }
+    nav a:hover { color: var(--brand-green); }
+
+    @media (max-width: 768px) {
+      header { padding: 15px 24px; }
+      nav a { margin-left: 20px; font-size: 0.85rem; }
+      .brand-logo { height: 32px; }
+    }
+
+    .inner-hero {
+      padding: 180px 50px 80px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    .inner-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--brand-dark);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .inner-hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 700px;
+    }
+
+    @media (max-width: 768px) {
+      .inner-hero { padding: 140px 24px 50px 24px; }
+      .inner-hero h1 { font-size: 2.5rem; }
+    }
+
+    .matrix-section {
+      padding: 100px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .matrix-row {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+
+    .matrix-row:last-child { margin-bottom: 0; }
+
+    .matrix-meta h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brand-dark);
+      position: sticky;
+      top: 120px;
+    }
+
+    .matrix-meta h2 span {
+      color: var(--brand-green-hover);
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .capability-block {
+      background-color: var(--bg-light);
+      padding: 40px;
+      margin-bottom: 30px;
+      border-left: 4px solid var(--brand-dark);
+    }
+
+    .capability-block:last-child { margin-bottom: 0; }
+    .capability-block:hover { border-left-color: var(--brand-green); }
+    .capability-block h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--brand-dark); }
+    .capability-block p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    @media (max-width: 968px) {
+      .matrix-section { padding: 60px 24px; }
+      .matrix-row { grid-template-columns: 1fr; gap: 30px; margin-bottom: 60px; }
+      .matrix-meta h2 { position: static; }
+    }
+
+    footer { background-color: var(--brand-dark); color: #FFFFFF; padding: 80px 50px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+    .footer-left { display: flex; flex-direction: column; gap: 25px; }
+    .footer-logo { height: 50px; width: auto; align-self: flex-start; }
+    .footer-left h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
+    .footer-left p { color: #BBBBBB; max-width: 400px; }
+    .footer-right { display: flex; gap: 60px; }
+    .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 15px; }
+    .footer-col p { font-size: 0.95rem; color: #BBBBBB; line-height: 1.8; }
+    @media (max-width: 768px) { footer { padding: 60px 24px; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="brand-link">
+      <img class="brand-logo" src="logo.png" alt="Finger Digital Logo">
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="inner-hero">
+    <h1>Capabilities</h1>
+    <p>We provide full-spectrum technological transformation architectures across physical automation endpoints and secure application stacks.</p>
+  </div>
+
+  <section class="matrix-section">
+    <div class="matrix-row">
+      <div class="matrix-meta">
+        <h2><span>01 / Infrastructure</span>Hardware Integration</h2>
+      </div>
+      <div class="matrix-content">
+        <div class="capability-block">
+          <h3>Industrial Control Systems</h3>
+          <p>Structuring industrial logic profiles, fieldbus configuration mapping, and determinism loops utilizing modern automation ecosystems for manufacturing pipelines.</p>
+        </div>
+        <div class="capability-block">
+          <h3>Embedded Firmware & Bus Topologies</h3>
+          <p>Developing low-level device drivers and custom real-time application profiles spanning modular transceivers, standard communication protocols, and industrial bus control.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="matrix-row">
+      <div class="matrix-meta">
+        <h2><span>02 / Digital</span>Software Ecosystems</h2>
+      </div>
+      <div class="matrix-content">
+        <div class="capability-block">
+          <h3>Full-Stack Application Development</h3>
+          <p>Engineering robust internal application backends and fast browser-side interfaces designed to handle high-concurrency hardware analytics data processing pipelines flawlessly.</p>
+        </div>
+        <div class="capability-block">
+          <h3>UX Workflow Architecture</h3>
+          <p>Mapping completely flat, logical interaction wireframes optimized for rapid operation control panels, minimizing operational errors and increasing interface visibility metrics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <img class="footer-logo" src="logo.png" alt="Finger Digital Logo">
+        <h3>Let's level up.</h3>
+        <p>Ready to structurally convert your technical vision into scalable web infrastructure?</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-col"><h5>Inquiries</h5><p>hello@fingerdigital.com<br>+1 (555) 019-2831</p></div>
+        <div class="footer-col"><h5>Studio</h5><p>248 Vector Blvd, Suite 10<br>Austin, TX 78701</p></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FINGER DIGITAL | Services</title>
+  <style>
+    :root {
+      --brand-green: #8AD621;
+      --brand-green-hover: #21870A;
+      --brand-dark: #162E1C;
+      --bg-light: #F9F9F9;
+      --bg-white: #FFFFFF;
+      --text-main: #333333;
+      --text-muted: #666666;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg-white);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       padding: 20px 50px;
       display: flex;
       justify-content: space-between;
