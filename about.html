@@ -22,6 +22,20 @@
       overflow-x: hidden;
       line-height: 1.5;
     }
+
+    /* Core Native Reveal Animation Engine */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal-node {
+      animation: fadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: transform, opacity;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+
     header {
       position: fixed;
       top: 0;
@@ -82,7 +96,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="reveal-node">
     <a href="/index.html" class="brand-link">
       <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo">
       <span style="font-family: inherit; font-size: 1.25rem; font-weight: 900; color: #162E1C; letter-spacing: 1.5px; text-transform: uppercase;">FINGER DIGITAL</span>
@@ -95,12 +109,12 @@
     </nav>
   </header>
 
-  <div class="inner-hero">
+  <div class="inner-hero reveal-node delay-1">
     <h1>Our Studio</h1>
     <p>Bridging physical reality and advanced corporate digital interfaces through structural systems deployment.</p>
   </div>
 
-  <section class="editorial-section">
+  <section class="editorial-section reveal-node delay-2">
     <div class="editorial-left">
       <h2>We eliminate the fiction between structural mechanics and modern interaction design frameworks.</h2>
       <p>FINGER DIGITAL was formed under a core thesis: physical embedded systems architecture shouldn't exist in absolute isolation from refined, data-optimized digital communication pipelines.</p>
@@ -120,7 +134,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer class="reveal-node delay-2">
     <div class="footer-content">
       <div class="footer-left">
         <img class="footer-logo" src="/logo.png" alt="Finger Digital Logo">
