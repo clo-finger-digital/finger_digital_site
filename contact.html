@@ -14,9 +14,7 @@
       --text-main: #333333;
       --text-muted: #666666;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       background-color: var(--bg-white);
@@ -24,7 +22,6 @@
       overflow-x: hidden;
       line-height: 1.5;
     }
-
     header {
       position: fixed;
       top: 0;
@@ -39,8 +36,7 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #EEEEEE;
     }
-
-    .brand-link { display: flex; align-items: center; text-decoration: none; }
+    .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .brand-logo { height: 42px; width: auto; display: block; object-fit: contain; }
     nav { display: flex; align-items: center; }
     nav a {
@@ -52,463 +48,38 @@
       position: relative;
       transition: color 0.2s ease;
     }
-    nav a.active { color: var(--brand-green); }
-    nav a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--brand-green); }
-    nav a:hover { color: var(--brand-green); }
-
+    nav a.active { color: var(--brand-green-hover); }
+    nav a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--brand-green-hover); }
+    nav a:hover { color: var(--brand-green-hover); }
     @media (max-width: 768px) {
       header { padding: 15px 24px; }
       nav a { margin-left: 20px; font-size: 0.85rem; }
       .brand-logo { height: 32px; }
     }
-
-    .contact-container {
-      padding: 180px 50px 100px 50px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 80px;
-    }
-
-    .contact-info h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: var(--brand-dark);
-      margin-bottom: 25px;
-      letter-spacing: -1px;
-      line-height: 1.1;
-    }
-
-    .contact-info p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; max-width: 400px; }
-    .info-block { margin-bottom: 30px; }
-    .info-block h4 { font-size: 0.85rem; text-transform: uppercase; color: var(--brand-green-hover); letter-spacing: 1px; margin-bottom: 5px; }
-    .info-block p { font-size: 1.1rem; color: var(--brand-dark); margin: 0; }
-
-    .form-group { margin-bottom: 25px; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--brand-dark); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
-    
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 16px;
-      background-color: var(--bg-light);
-      border: 1px solid #DDDDDD;
-      font-family: inherit;
-      font-size: 1rem;
-      color: var(--brand-dark);
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--brand-dark);
-    }
-
-    .submit-btn {
-      background-color: var(--brand-dark);
-      color: #FFFFFF;
-      padding: 18px 40px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .submit-btn:hover { background-color: var(--brand-green-hover); }
-
-    @media (max-width: 968px) {
-      .contact-container { grid-template-columns: 1fr; gap: 50px; padding: 140px 24px 60px 24px; }
-      .contact-info h1 { font-size: 2.5rem; }
-    }
-
-    footer { background-color: var(--brand-dark); color: #FFFFFF; padding: 80px 50px; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-    .footer-left { display: flex; flex-direction: column; gap: 25px; }
-    .footer-logo { height: 50px; width: auto; align-self: flex-start; }
-    .footer-left h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
-    .footer-left p { color: #BBBBBB; max-width: 400px; }
-    .footer-right { display: flex; gap: 60px; }
-    .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 15px; }
-    .footer-col p { font-size: 0.95rem; color: #BBBBBB; line-height: 1.8; }
-    @media (max-width: 768px) { footer { padding: 60px 24px; } }
-  </style>
-</head>
-<body>
-
-  <header>
-    <a href="index.html" class="brand-link">
-      <img class="brand-logo" src="https://raw.githubusercontent.com/clo-finger-digital/finger_digital_site/main/logo.png" alt="Finger Digital Logo">
-    </a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
-
-  <section class="contact-container">
-    <div class="contact-info">
-      <h1>Let's sync operations.</h1>
-      <p>Initiate a conversation regarding project pipelines, capabilities deployment, or infrastructure evaluations.</p>
-      
-      <div class="info-block">
-        <h4>Direct Sync</h4>
-        <p>hello@fingerdigital.com</p>
-      </div>
-      <div class="info-block">
-        <h4>Voice Channel</h4>
-        <p>+1 (555) 019-2831</p>
-      </div>
-    </div>
-    
-    <div class="contact-form-block">
-      <form action="#" method="POST" onsubmit="event.preventDefault();">
-        <div class="form-group">
-          <label for="name">Identity / Organization</label>
-          <input type="text" id="name" required placeholder="e.g., Jane Doe / Automation Corp">
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Communication Endpoint</label>
-          <input type="email" id="email" required placeholder="name@domain.com">
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Project Parameters</label>
-          <textarea id="message" rows="6" required placeholder="Outline your project scope, timeline, and hardware or software parameters..."></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">Transmit Parameter Scope</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-left">
-        <img class="footer-logo" src="https://raw.githubusercontent.com/clo-finger-digital/finger_digital_site/main/logo.png" alt="Finger Digital Logo">
-        <h3>Let's level up.</h3>
-        <p>Ready to structurally convert your technical vision into scalable web infrastructure?</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-col"><h5>Inquiries</h5><p>hello@fingerdigital.com<br>+1 (555) 019-2831</p></div>
-        <div class="footer-col"><h5>Studio</h5><p>248 Vector Blvd, Suite 10<br>Austin, TX 78701</p></div>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FINGER DIGITAL | Contact</title>
-  <style>
-    :root {
-      --brand-green: #8AD621;
-      --brand-green-hover: #21870A;
-      --brand-dark: #162E1C;
-      --bg-light: #F9F9F9;
-      --bg-white: #FFFFFF;
-      --text-main: #333333;
-      --text-muted: #666666;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: var(--bg-white);
-      color: var(--text-main);
-      overflow-x: hidden;
-      line-height: 1.5;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #EEEEEE;
-    }
-
-    .brand-link { display: flex; align-items: center; gap: 16px; text-decoration: none; }
-    .brand-logo { height: 45px; width: auto; display: block; object-fit: contain; }
-    .logo-text { font-family: 'DIN Neuzeit Grotesk', 'Oswald', 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.5px; color: var(--brand-dark); text-transform: uppercase; line-height: 1; }
-    nav { display: flex; align-items: center; }
-    nav a { text-decoration: none; color: var(--brand-dark); font-weight: 600; font-size: 0.9rem; margin-left: 35px; position: relative; transition: color 0.2s ease; }
-    nav a.active { color: var(--brand-green); }
-    nav a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--brand-green); }
-    nav a:hover { color: var(--brand-green); }
-
-    @media (max-width: 768px) {
-      header { padding: 15px 24px; }
-      nav a { margin-left: 20px; font-size: 0.85rem; }
-      .logo-text { font-size: 1.1rem; letter-spacing: 0px; }
-      .brand-logo { height: 35px; }
-    }
-
     .contact-container { padding: 180px 50px 100px 50px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; }
     .contact-info h1 { font-size: 3.5rem; font-weight: 800; color: var(--brand-dark); margin-bottom: 25px; letter-spacing: -1px; line-height: 1.1; }
     .contact-info p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; max-width: 400px; }
     .info-block { margin-bottom: 30px; }
     .info-block h4 { font-size: 0.85rem; text-transform: uppercase; color: var(--brand-green-hover); letter-spacing: 1px; margin-bottom: 5px; }
     .info-block p { font-size: 1.1rem; color: var(--brand-dark); margin: 0; }
-
     .form-group { margin-bottom: 25px; }
     .form-group label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--brand-dark); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
-    .form-group input, .form-group textarea { width: 100%; padding: 16px; background-color: var(--bg-light); border: 1px solid #DDDDDD; font-family: inherit; font-size: 1rem; color: var(--brand-dark); outline: none; transition: border-color 0.2s ease; }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--brand-dark); }
-    .submit-btn { background-color: var(--brand-dark); color: #FFFFFF; padding: 18px 40px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: background-color 0.2s ease; }
-    .submit-btn:hover { background-color: var(--brand-green-hover); }
-
-    @media (max-width: 968px) { .contact-container { grid-template-columns: 1fr; gap: 50px; padding: 140px 24px 60px 24px; } .contact-info h1 { font-size: 2.5rem; } }
-
-    footer { background-color: var(--brand-dark); color: #FFFFFF; padding: 80px 50px; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-    .footer-left { display: flex; flex-direction: column; gap: 24px; }
-    .footer-brand { display: flex; align-items: center; gap: 16px; }
-    .footer-brand .logo-text { color: #FFFFFF; }
-    .footer-left h3 { font-size: 1.8rem; font-weight: 800; }
-    .footer-left p { color: #BBBBBB; max-width: 400px; }
-    .footer-right { display: flex; gap: 60px; }
-    .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 15px; }
-    .footer-col p { font-size: 0.95rem; color: #BBBBBB; line-height: 1.8; }
-    @media (max-width: 768px) { footer { padding: 60px 24px; } }
-  </style>
-</head>
-<body>
-
-  <header>
-    <a href="index.html" class="brand-link">
-      <img class="brand-logo" src="hand only.png" alt="Finger Digital Icon">
-      <div class="logo-text">Finger Digital</div>
-    </a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
-
-  <section class="contact-container">
-    <div class="contact-info">
-      <h1>Let's sync operations.</h1>
-      <p>Initiate a conversation regarding project pipelines, capabilities deployment, or infrastructure evaluations.</p>
-      
-      <div class="info-block">
-        <h4>Direct Sync</h4>
-        <p>hello@fingerdigital.com</p>
-      </div>
-      <div class="info-block">
-        <h4>Voice Channel</h4>
-        <p>+1 (555) 019-2831</p>
-      </div>
-    </div>
-    
-    <div class="contact-form-block">
-      <form action="#" method="POST" onsubmit="event.preventDefault();">
-        <div class="form-group">
-          <label for="name">Identity / Organization</label>
-          <input type="text" id="name" required placeholder="e.g., Jane Doe / Automation Corp">
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Communication Endpoint</label>
-          <input type="email" id="email" required placeholder="name@domain.com">
-        </div>
-        
-        <div class="form-group">
-          <label for="message">Project Parameters</label>
-          <textarea id="message" rows="6" required placeholder="Outline your project scope, timeline, and hardware or software parameters..."></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">Transmit Parameter Scope</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <img class="brand-logo" src="hand only.png" alt="Finger Digital Icon">
-          <div class="logo-text">Finger Digital</div>
-        </div>
-        <h3>Let's level up.</h3>
-        <p>Ready to structurally convert your technical vision into scalable web infrastructure?</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-col"><h5>Inquiries</h5><p>hello@fingerdigital.com<br>+1 (555) 019-2831</p></div>
-        <div class="footer-col"><h5>Studio</h5><p>248 Vector Blvd, Suite 10<br>Austin, TX 78701</p></div>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FINGER DIGITAL | Contact</title>
-  <style>
-    :root {
-      --brand-green: #8AD621;
-      --brand-green-hover: #21870A;
-      --brand-dark: #162E1C;
-      --bg-light: #F9F9F9;
-      --bg-white: #FFFFFF;
-      --text-main: #333333;
-      --text-muted: #666666;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: var(--bg-white);
-      color: var(--text-main);
-      overflow-x: hidden;
-      line-height: 1.5;
-    }
-
-    /* Global Navigation Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 15px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #EEEEEE;
-    }
-
-    .brand-link {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-    }
-
-    .logo-container {
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo-text { font-size: 1.25rem; font-weight: 800; letter-spacing: 1px; color: var(--brand-dark); text-transform: uppercase; text-decoration: none; }
-    .logo-text span { color: var(--brand-green); }
-    nav { display: flex; align-items: center; }
-    nav a {
-      text-decoration: none;
-      color: var(--brand-dark);
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-left: 35px;
-      position: relative;
-      transition: color 0.2s ease;
-    }
-    nav a.active { color: var(--brand-green); }
-    nav a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--brand-green); }
-    nav a:hover { color: var(--brand-green); }
-
-    @media (max-width: 768px) {
-      header { padding: 15px 24px; }
-      nav a { margin-left: 20px; font-size: 0.85rem; }
-      .logo-text { display: none; }
-    }
-
-    /* Contact Form Layout Structure */
-    .contact-container {
-      padding: 180px 50px 100px 50px;
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 80px;
-    }
-
-    .contact-info h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: var(--brand-dark);
-      margin-bottom: 25px;
-      letter-spacing: -1px;
-      line-height: 1.1;
-    }
-
-    .contact-info p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; max-width: 400px; }
-    .info-block { margin-bottom: 30px; }
-    .info-block h4 { font-size: 0.85rem; text-transform: uppercase; color: var(--brand-green-hover); letter-spacing: 1px; margin-bottom: 5px; }
-    .info-block p { font-size: 1.1rem; color: var(--brand-dark); margin: 0; }
-
-    /* Flat Geometric Form Design */
-    .form-group { margin-bottom: 25px; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--brand-dark); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
-    
     .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 16px;
-      background-color: var(--bg-light);
-      border: 1px solid #DDDDDD;
-      font-family: inherit;
-      font-size: 1rem;
-      color: var(--brand-dark);
-      outline: none;
-      transition: border-color 0.2s ease;
+      width: 100%; padding: 16px; background-color: var(--bg-light); border: 1px solid #DDDDDD; font-family: inherit; font-size: 1rem; color: var(--brand-dark); outline: none; transition: border-color 0.2s ease;
     }
-
-    .form-group input:focus, .form-group textarea:focus {
-      border-color: var(--brand-dark);
-    }
-
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--brand-dark); }
     .submit-btn {
-      background-color: var(--brand-dark);
-      color: #FFFFFF;
-      padding: 18px 40px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
+      background-color: var(--brand-dark); color: #FFFFFF; padding: 18px 40px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; transition: background-color 0.2s ease;
     }
-
     .submit-btn:hover { background-color: var(--brand-green-hover); }
-
     @media (max-width: 968px) {
       .contact-container { grid-template-columns: 1fr; gap: 50px; padding: 140px 24px 60px 24px; }
       .contact-info h1 { font-size: 2.5rem; }
     }
-
-    /* Global Footer */
     footer { background-color: var(--brand-dark); color: #FFFFFF; padding: 80px 50px; }
     .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-    .footer-left { display: flex; flex-direction: column; gap: 20px; }
-    .footer-logo { width: 70px; height: 70px; }
-    .footer-logo svg path[style*="fill:#A5AFB4"], .footer-logo svg path[style*="fill:#A5AFB4;"] { fill: #FFFFFF !important; }
+    .footer-left { display: flex; flex-direction: column; gap: 25px; }
+    .footer-logo { height: 42px; width: auto; align-self: flex-start; filter: brightness(0) invert(1); }
     .footer-left h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
     .footer-left p { color: #BBBBBB; max-width: 400px; }
     .footer-right { display: flex; gap: 60px; }
@@ -520,44 +91,15 @@
 <body>
 
   <header>
-    <a href="index.html" class="brand-link">
-      <div class="logo-container">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000; width: 100%; height: 100%;" xml:space="preserve">
-          <g>
-            <path style="fill:#A5AFB4;" d="M681.3,529c0,75.4-44.5,140.4-108.9,170.3c-22.1,10.3-46.7,16.1-72.7,16.1s-50.6-5.8-72.7-16.1c-64.4-29.9-108.9-94.9-108.9-170.3h61.7c0,53.4,31.5,99.4,77.1,120.6c13.3,6.2,28.2,9.7,43.9,9.7s30.6-3.5,43.9-9.7c45.6-21.2,77.1-67.2,77.1-120.6H681.3z"/>
-            <path style="fill:#162E1C;" d="M381.9,483.5c0-11-2.9-20.9-7.9-29.5c-4.4-7.6-10.7-13.9-18.3-18.3c-8.6-5-18.5-7.9-29.5-7.9c-1.8,0-3.6,0.1-5.4,0.3c15.1,16,24.4,37.5,24.4,61.2v7.1h31.1C381.6,491.5,381.9,487.5,381.9,483.5z"/>
-            <path style="fill:#8AD621;" d="M499.7,215c0-26.6-13.6-50.1-34.1-63.7c-4.1-2.7-8.5-5-13.2-6.8c-1.1-0.4-2.3-0.8-3.4-1.2c-5.5-1.8-11.3-2.8-17.3-2.8c-16,0-30.5,6.5-41,17c-6,6-10.7,13.3-13.7,21.5c-2.4,6.5-3.7,13.5-3.7,20.8v45.2h73.3V215z"/>
-            <path style="fill:#4B8454;" d="M550.8,363h-31.1v145.4h31.1V363z"/>
-            <path style="fill:#9EEAA1;" d="M615,378.9c0-19.6-10-36.9-25.1-47c-5.6-3.7-11.9-6.3-18.7-7.4c-2.4-0.4-4.8-0.6-7.3-0.6c-11.8,0-22.5,4.8-30.2,12.5c-7.7,7.7-12.5,18.4-12.5,30.2v142h93.9V378.9z"/>
-            <path style="fill:#21870A;" d="M681.3,401.7c0-19.6-10-36.9-25.1-47c-5.6-3.7-11.9-6.3-18.7-7.4c-2.4-0.4-4.8-0.6-7.3-0.6c-11.8,0-22.5,4.8-30.2,12.5c-7.7,7.7-12.5,18.4-12.5,30.2v119.2h93.9V401.7z"/>
-            <path style="fill:#A5AFB4;" d="M434,409.8h-7.1v98.6H434V409.8z"/>
-            <path style="fill:#4B8454;" d="M499.7,330.1h-34.1V508.4h34.1V330.1z"/>
-            <path style="fill:#21870A;" d="M550.8,300.7c0-11-2.9-20.9-7.9-29.5c-4.4-7.6-10.7-13.9-18.3-18.3c-8.6-5-18.5-7.9-29.5-7.9c-16,0-30.5,6.5-41,17c-4.9,4.9-8.8,10.8-11.3,17.4c-2.9,7.6-4.5,15.8-4.5,24.4v18h31.1v-18c0-4.8,1.3-9.4,3.5-13.3c1.9-3.4,4.7-6.2,8.1-8.1c3.9-2.2,8.5-3.5,13.3-3.5s9.4,1.3,13.3,3.5c3.4,1.9,6.2,4.7,8.1,8.1c2.2,3.9,3.5,8.5,3.5,13.3v18h31.1V300.7z"/>
-            <path style="fill:#FFFFFF;" d="M444.6,260.6c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S444.6,264.9,444.6,260.6z"/>
-            <path style="fill:#FFFFFF;" d="M485.4,415.8c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S485.4,420.1,485.4,415.8z"/>
-            <path style="fill:#FFFFFF;" d="M444.6,303.4c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S444.6,307.7,444.6,303.4z"/>
-            <path style="fill:#FFFFFF;" d="M523.9,385.1c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S523.9,389.4,523.9,385.1z"/>
-            <path style="fill:#FFFFFF;" d="M583,401.7c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S583,406,583,401.7z"/>
-            <path style="fill:#FFFFFF;" d="M570.6,478.4c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S570.6,482.7,570.6,478.4z"/>
-            <path style="fill:#FFFFFF;" d="M649.3,425c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S649.3,429.3,649.3,425z"/>
-            <path style="fill:#FFFFFF;" d="M636.9,484.7c0-4.3,3.5-7.8,7.8-7.8c4.3,0,7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8C640.4,492.5,636.9,489,636.9,484.7z"/>
-            <path style="fill:#FFFFFF;" d="M334.8,478.4c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S334.8,482.7,334.8,478.4z"/>
-            <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="452.4" y1="264.9" x2="452.4" y2="300"/>
-            <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="493.2" y1="420.1" x2="493.2" y2="476.8"/>
-            <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="531.7" y1="392.2" x2="531.7" y2="477.1"/>
-            <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="590.8" y1="409.2" x2="590.8" y2="441"/>
-            <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="657.1" y1="432.2" x2="657.1" y2="449"/>
-            <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="342.6" y1="485.7" x2="366" y2="504.9"/>
-          </g>
-        </svg>
-      </div>
-      <div class="logo-text">Finger<span>Digital</span></div>
+    <a href="/index.html" class="brand-link">
+      <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo">
+      <span style="font-family: inherit; font-size: 1.25rem; font-weight: 900; color: #162E1C; letter-spacing: 1.5px; text-transform: uppercase;">FINGER DIGITAL</span>
     </a>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/about.html">About Us</a>
+      <a href="/contact.html" class="active">Contact</a>
     </nav>
   </header>
 
@@ -565,7 +107,6 @@
     <div class="contact-info">
       <h1>Let's sync operations.</h1>
       <p>Initiate a conversation regarding project pipelines, capabilities deployment, or infrastructure evaluations.</p>
-      
       <div class="info-block">
         <h4>Direct Sync</h4>
         <p>hello@fingerdigital.com</p>
@@ -575,24 +116,20 @@
         <p>+1 (555) 019-2831</p>
       </div>
     </div>
-    
     <div class="contact-form-block">
       <form action="#" method="POST" onsubmit="event.preventDefault();">
         <div class="form-group">
           <label for="name">Identity / Organization</label>
           <input type="text" id="name" required placeholder="e.g., Jane Doe / Automation Corp">
         </div>
-        
         <div class="form-group">
           <label for="email">Communication Endpoint</label>
           <input type="email" id="email" required placeholder="name@domain.com">
         </div>
-        
         <div class="form-group">
           <label for="message">Project Parameters</label>
           <textarea id="message" rows="6" required placeholder="Outline your project scope, timeline, and hardware or software parameters..."></textarea>
         </div>
-        
         <button type="submit" class="submit-btn">Transmit Parameter Scope</button>
       </form>
     </div>
@@ -601,41 +138,14 @@
   <footer>
     <div class="footer-content">
       <div class="footer-left">
-        <div class="footer-logo">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000; width: 100%; height: 100%;" xml:space="preserve">
-            <g>
-              <path style="fill:#A5AFB4;" d="M681.3,529c0,75.4-44.5,140.4-108.9,170.3c-22.1,10.3-46.7,16.1-72.7,16.1s-50.6-5.8-72.7-16.1c-64.4-29.9-108.9-94.9-108.9-170.3h61.7c0,53.4,31.5,99.4,77.1,120.6c13.3,6.2,28.2,9.7,43.9,9.7s30.6-3.5,43.9-9.7c45.6-21.2,77.1-67.2,77.1-120.6H681.3z"/>
-              <path style="fill:#162E1C;" d="M381.9,483.5c0-11-2.9-20.9-7.9-29.5c-4.4-7.6-10.7-13.9-18.3-18.3c-8.6-5-18.5-7.9-29.5-7.9c-1.8,0-3.6,0.1-5.4,0.3c15.1,16,24.4,37.5,24.4,61.2v7.1h31.1C381.6,491.5,381.9,487.5,381.9,483.5z"/>
-              <path style="fill:#8AD621;" d="M499.7,215c0-26.6-13.6-50.1-34.1-63.7c-4.1-2.7-8.5-5-13.2-6.8c-1.1-0.4-2.3-0.8-3.4-1.2c-5.5-1.8-11.3-2.8-17.3-2.8c-16,0-30.5,6.5-41,17c-6,6-10.7,13.3-13.7,21.5c-2.4,6.5-3.7,13.5-3.7,20.8v45.2h73.3V215z"/>
-              <path style="fill:#4B8454;" d="M550.8,363h-31.1v145.4h31.1V363z"/>
-              <path style="fill:#9EEAA1;" d="M615,378.9c0-19.6-10-36.9-25.1-47c-5.6-3.7-11.9-6.3-18.7-7.4c-2.4-0.4-4.8-0.6-7.3-0.6c-11.8,0-22.5,4.8-30.2,12.5c-7.7,7.7-12.5,18.4-12.5,30.2v142h93.9V378.9z"/>
-              <path style="fill:#21870A;" d="M681.3,401.7c0-19.6-10-36.9-25.1-47c-5.6-3.7-11.9-6.3-18.7-7.4c-2.4-0.4-4.8-0.6-7.3-0.6c-11.8,0-22.5,4.8-30.2,12.5c-7.7,7.7-12.5,18.4-12.5,30.2v119.2h93.9V401.7z"/>
-              <path style="fill:#A5AFB4;" d="M434,409.8h-7.1v98.6H434V409.8z"/>
-              <path style="fill:#4B8454;" d="M499.7,330.1h-34.1V508.4h34.1V330.1z"/>
-              <path style="fill:#21870A;" d="M550.8,300.7c0-11-2.9-20.9-7.9-29.5c-4.4-7.6-10.7-13.9-18.3-18.3c-8.6-5-18.5-7.9-29.5-7.9c-16,0-30.5,6.5-41,17c-4.9,4.9-8.8,10.8-11.3,17.4c-2.9,7.6-4.5,15.8-4.5,24.4v18h31.1v-18c0-4.8,1.3-9.4,3.5-13.3c1.9-3.4,4.7-6.2,8.1-8.1c3.9-2.2,8.5-3.5,13.3-3.5s9.4,1.3,13.3,3.5c3.4,1.9,6.2,4.7,8.1,8.1c2.2,3.9,3.5,8.5,3.5,13.3v18h31.1V300.7z"/>
-              <path style="fill:#FFFFFF;" d="M444.6,260.6c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S444.6,264.9,444.6,260.6z"/>
-              <path style="fill:#FFFFFF;" d="M485.4,415.8c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S485.4,420.1,485.4,415.8z"/>
-              <path style="fill:#FFFFFF;" d="M444.6,303.4c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S444.6,307.7,444.6,303.4z"/>
-              <path style="fill:#FFFFFF;" d="M523.9,385.1c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S523.9,389.4,523.9,385.1z"/>
-              <path style="fill:#FFFFFF;" d="M583,401.7c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S583,406,583,401.7z"/>
-              <path style="fill:#FFFFFF;" d="M570.6,478.4c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S570.6,482.7,570.6,478.4z"/>
-              <path style="fill:#FFFFFF;" d="M649.3,425c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S649.3,429.3,649.3,425z"/>
-              <path style="fill:#FFFFFF;" d="M636.9,484.7c0-4.3,3.5-7.8,7.8-7.8c4.3,0,7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8C640.4,492.5,636.9,489,636.9,484.7z"/>
-              <path style="fill:#FFFFFF;" d="M334.8,478.4c0-4.3,3.5-7.8,7.8-7.8s7.8,3.5,7.8,7.8s-3.5,7.8-7.8,7.8S334.8,482.7,334.8,478.4z"/>
-              <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="452.4" y1="264.9" x2="452.4" y2="300"/>
-              <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="493.2" y1="420.1" x2="493.2" y2="476.8"/>
-              <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="531.7" y1="392.2" x2="531.7" y2="477.1"/>
-              <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="590.8" y1="409.2" x2="590.8" y2="441"/>
-              <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="657.1" y1="432.2" x2="657.1" y2="449"/>
-              <line style="fill:none;stroke:#FFFFFF;stroke-width:4.4283;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="342.6" y1="485.7" x2="366" y2="504.9"/>
-            </g>
-          </svg>
-        </div>
+        <img class="footer-logo" src="/logo.png" alt="Finger Digital Logo">
         <h3>Let's level up.</h3>
         <p>Ready to structurally convert your technical vision into scalable web infrastructure?</p>
       </div>
-      <div class="footer-col"><h5>Inquiries</h5><p>hello@fingerdigital.com<br>+1 (555) 019-2831</p></div>
-      <div class="footer-col"><h5>Studio</h5><p>248 Vector Blvd, Suite 10<br>Austin, TX 78701</p></div>
+      <div class="footer-right">
+        <div class="footer-col"><h5>Inquiries</h5><p>hello@fingerdigital.com<br>+1 (555) 019-2831</p></div>
+        <div class="footer-col"><h5>Studio</h5><p>248 Vector Blvd, Suite 10<br>Austin, TX 78701</p></div>
+      </div>
     </div>
   </footer>
 
