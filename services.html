@@ -22,6 +22,20 @@
       overflow-x: hidden;
       line-height: 1.5;
     }
+
+    /* Core Native Reveal Animation Engine */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal-node {
+      animation: fadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: transform, opacity;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+
     header {
       position: fixed;
       top: 0;
@@ -74,20 +88,8 @@
     .capability-block h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--brand-dark); font-weight: 800; }
     .capability-block p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 25px; }
     
-    /* Layout styling variables for custom asset containers */
-    .service-image-frame {
-      width: 100%;
-      height: 240px;
-      overflow: hidden;
-      margin-bottom: 0;
-      border: 1px solid #E5E5E5;
-    }
-    .service-image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    .service-image-frame { width: 100%; height: 240px; overflow: hidden; border: 1px solid #E5E5E5; }
+    .service-image-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     @media (max-width: 968px) {
       .matrix-section { padding: 60px 24px; }
@@ -108,7 +110,7 @@
 </head>
 <body>
 
-  <header>
+  <header class="reveal-node">
     <a href="/index.html" class="brand-link">
       <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo">
       <span style="font-family: inherit; font-size: 1.25rem; font-weight: 900; color: #162E1C; letter-spacing: 1.5px; text-transform: uppercase;">FINGER DIGITAL</span>
@@ -121,81 +123,68 @@
     </nav>
   </header>
 
-  <div class="inner-hero">
+  <div class="inner-hero reveal-node delay-1">
     <h1>Our Services</h1>
     <p>Providing high-tier technical systems, strategic engineering insights, and scalable technical personnel deployment frameworks globally.</p>
   </div>
 
-  <section class="matrix-section">
+  <section class="matrix-section reveal-node delay-2">
     
-<!-- SERVICE BLOCK 1: AI TECHNOLOGY DEPLOYMENT -->
     <div class="matrix-row">
-      <div class="matrix-meta">
-        <h2><span>01 / Deployment</span>AI Technology</h2>
-      </div>
+      <div class="matrix-meta"><h2><span>01 / Deployment</span>AI Technology</h2></div>
       <div class="matrix-content">
         <div class="capability-block">
           <div class="service-image-frame" style="margin-bottom: 25px;">
-            <!-- Permanent CDN asset mapping for stable AI architecture rendering -->
-            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80" alt="Advanced Computational Neural Grid Network and AI Architecture Patterns">          
+            <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80" alt="Advanced Computational Neural Grid Network and AI Architecture Patterns">
           </div>
           <h3>AI Technology Deployment</h3>
-          <p>Integrating tailored transformer architectures, autonomous agentic intelligence infrastructure, and vector database optimization profiles straight into core enterprise pipelines. We bridge industrial workflows with high-capacity analytical models securely.</p>
+          <p>Integrating tailored transformer architectures, autonomous agentic intelligence infrastructure, and vector database optimization profiles straight into core enterprise pipelines.</p>
         </div>
       </div>
     </div>
 
-    <!-- SERVICE BLOCK 2: IT SOLUTION PROVIDER -->
     <div class="matrix-row">
-      <div class="matrix-meta">
-        <h2><span>02 / Architecture</span>Solution Design</h2>
-      </div>
+      <div class="matrix-meta"><h2><span>02 / Architecture</span>Solution Design</h2></div>
       <div class="matrix-content">
         <div class="capability-block">
           <div class="service-image-frame" style="margin-bottom: 25px;">
-            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80" alt="Enterprise IT Architecture Systems Blueprint and Data Flows">          
+            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80" alt="Enterprise IT Architecture Systems Blueprint and Data Flows">
           </div>
           <h3>IT Solution Provider</h3>
-          <p>Architecting robust technical Blueprints across full-stack applications, data lakehouses, and custom business management systems. Our engineering maps transform complex legacy friction parameters into streamlined system nodes.</p>
+          <p>Architecting robust technical Blueprints across full-stack applications, data lakehouses, and custom business management systems.</p>
         </div>
       </div>
     </div>
 
-    <!-- SERVICE BLOCK 3: IT MANAGED SERVICE PROVIDER -->
     <div class="matrix-row">
-      <div class="matrix-meta">
-        <h2><span>03 / Operations</span>Managed Systems</h2>
-      </div>
+      <div class="matrix-meta"><h2><span>03 / Operations</span>Managed Systems</h2></div>
       <div class="matrix-content">
         <div class="capability-block">
           <div class="service-image-frame" style="margin-bottom: 25px;">
-            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSxpLGUa9V3jsLMeu3dcbodVVHBL3zOW4NCnZRTcg8LM6lezz8xCriwacFHFmNezt9qsdGtIhHE2TL10co" alt="Network Operations Monitoring Security Center View">
+            <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80" alt="Network Operations Monitoring Security Center View">
           </div>
           <h3>IT Managed Service Provider</h3>
-          <p>Executing continuous remote surveillance monitoring metrics, threat prevention analysis, data recovery protocols, and network topology maintenance checks. We insulate technical infrastructures from system failures with near-zero latency down-times.</p>
+          <p>Executing continuous remote surveillance monitoring metrics, threat prevention analysis, data recovery protocols, and network topology maintenance checks.</p>
         </div>
       </div>
     </div>
 
-    <!-- SERVICE BLOCK 4: IT WORKFORCE PROVIDER -->
     <div class="matrix-row">
-      <div class="matrix-meta">
-        <h2><span>04 / Talent</span>Workforce Staffing</h2>
-      </div>
+      <div class="matrix-meta"><h2><span>04 / Talent</span>Workforce Staffing</h2></div>
       <div class="matrix-content">
         <div class="capability-block">
           <div class="service-image-frame" style="margin-bottom: 25px;">
-            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTSAnaDeqEliMNUA06FbTJ9cV2K2RFtfdQcsbw5EVVytl9HNrrJSVW8gsvHf8b1gBZhxLZvqWsprJpKG4A" alt="Professional Tech Engineering Workforce Team Collaboration">
+            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80" alt="Professional Tech Engineering Workforce Team Collaboration">
           </div>
           <h3>IT Workforce Provider</h3>
-          <p>Supplying highly vet-verified engineering talent pipelines, systems operators, cloud specialists, and full-stack software contractors. We provision tactical personnel support frameworks scaled immediately to meet project timeline objectives.</p>
+          <p>Supplying highly vet-verified engineering talent pipelines, systems operators, cloud specialists, and full-stack software contractors.</p>
         </div>
       </div>
     </div>
 
   </section>
 
-  <footer>
+  <footer class="reveal-node delay-2">
     <div class="footer-content">
       <div class="footer-left">
         <img class="footer-logo" src="/logo.png" alt="Finger Digital Logo">
