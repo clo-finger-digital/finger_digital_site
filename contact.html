@@ -15,13 +15,24 @@
       --text-muted: #666666;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    /* Sticky Footer Structural Core Logic */
+    html {
+      height: 100%;
+    }
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       background-color: var(--bg-white);
       color: var(--text-main);
       overflow-x: hidden;
       line-height: 1.5;
+      
+      /* Flex layout parameters to pin the footer flush to the viewport bottom */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+    
     header {
       position: fixed;
       top: 0;
@@ -56,7 +67,18 @@
       nav a { margin-left: 20px; font-size: 0.85rem; }
       .brand-logo { height: 32px; }
     }
-    .contact-container { padding: 180px 50px 100px 50px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; }
+    
+    /* Instructing the content area to absorb all remaining empty space */
+    .contact-container { 
+      padding: 180px 50px 100px 50px; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      display: grid; 
+      grid-template-columns: 0.9fr 1.1fr; 
+      gap: 80px;
+      flex: 1 0 auto; /* Absorbs vertical whitespace grid properties layout */
+    }
+    
     .contact-info h1 { font-size: 3.5rem; font-weight: 800; color: var(--brand-dark); margin-bottom: 25px; letter-spacing: -1px; line-height: 1.1; }
     .contact-info p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; max-width: 400px; }
     .info-block { margin-bottom: 30px; }
@@ -76,7 +98,14 @@
       .contact-container { grid-template-columns: 1fr; gap: 50px; padding: 140px 24px 60px 24px; }
       .contact-info h1 { font-size: 2.5rem; }
     }
-    footer { background-color: var(--brand-dark); color: #FFFFFF; padding: 80px 50px; }
+    
+    /* Footer node locks cleanly flush at the viewport exit line */
+    footer { 
+      background-color: var(--brand-dark); 
+      color: #FFFFFF; 
+      padding: 80px 50px; 
+      flex-shrink: 0; /* Prevents layout sizing compression */
+    }
     .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
     .footer-left { display: flex; flex-direction: column; gap: 25px; }
     .footer-logo { height: 42px; width: auto; align-self: flex-start; filter: brightness(0) invert(1); }
