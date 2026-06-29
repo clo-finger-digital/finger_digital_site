@@ -15,11 +15,7 @@
       --text-muted: #666666;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -29,7 +25,7 @@
       line-height: 1.5;
     }
 
-    /* Global Navigation Header */
+    /* Fixed Navigation Header Layout */
     header {
       position: fixed;
       top: 0;
@@ -45,25 +41,12 @@
       border-bottom: 1px solid #EEEEEE;
     }
 
-    .brand-link {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    /* Responsive dimensions optimized for your new wide horizontal logo alignment */
-    .brand-logo {
-      height: 42px;
-      width: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-    }
-
+    .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    
+    /* Strict dimensions to prevent wide layout compression */
+    .brand-logo { height: 42px; width: auto; display: block; object-fit: contain; }
+    
+    nav { display: flex; align-items: center; }
     nav a {
       text-decoration: none;
       color: var(--brand-dark);
@@ -74,23 +57,11 @@
       transition: color 0.2s ease;
     }
 
-    nav a.active {
-      color: var(--brand-green-hover);
-    }
-
+    nav a.active { color: var(--brand-green-hover); }
     nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--brand-green-hover);
+      content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--brand-green-hover);
     }
-
-    nav a:hover {
-      color: var(--brand-green-hover);
-    }
+    nav a:hover { color: var(--brand-green-hover); }
 
     @media (max-width: 768px) {
       header { padding: 15px 24px; }
@@ -110,11 +81,7 @@
     }
 
     @media (max-width: 968px) {
-      .hero-section {
-        grid-template-columns: 1fr;
-        padding: 140px 24px 60px 24px;
-        gap: 40px;
-      }
+      .hero-section { grid-template-columns: 1fr; padding: 140px 24px 60px 24px; gap: 40px; }
     }
 
     .hero-left h1 {
@@ -126,9 +93,7 @@
       margin-bottom: 35px;
     }
 
-    @media (max-width: 768px) {
-      .hero-left h1 { font-size: 2.5rem; }
-    }
+    @media (max-width: 768px) { .hero-left h1 { font-size: 2.5rem; } }
 
     .cta-btn {
       display: inline-block;
@@ -142,226 +107,72 @@
       text-decoration: none;
       transition: background-color 0.2s ease;
     }
+    .cta-btn:hover { background-color: var(--brand-green-hover); }
 
-    .cta-btn:hover {
-      background-color: var(--brand-green-hover);
-    }
+    .formula-container { background-color: var(--bg-light); padding: 40px; border-right: 4px solid var(--brand-green); }
+    .formula-row { margin-bottom: 25px; }
+    .formula-row:last-child { margin-bottom: 0; }
+    .formula-key { font-size: 1.1rem; font-weight: 800; color: var(--brand-green-hover); display: block; margin-bottom: 4px; }
+    .formula-val { font-size: 1rem; color: var(--text-muted); }
+    .formula-operator { font-size: 1.5rem; font-weight: 800; color: var(--brand-dark); margin: 10px 0; display: block; }
 
-    .formula-container {
-      background-color: var(--bg-light);
-      padding: 40px;
-      border-right: 4px solid var(--brand-green);
-    }
+    /* Infinite Marquee Ribbon */
+    .ticker-wrap { width: 100%; background-color: var(--brand-dark); padding: 22px 0; overflow: hidden; }
+    .ticker { display: flex; white-space: nowrap; padding-left: 100%; animation: marquee 30s linear infinite; }
+    .ticker__item { display: inline-block; padding: 0 2.5rem; font-size: 1.5rem; font-weight: 800; text-transform: uppercase; color: #FFFFFF; letter-spacing: 2px; }
+    .ticker__item span { color: var(--brand-green); }
+    @keyframes marquee { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
 
-    .formula-row {
-      margin-bottom: 25px;
-    }
+    /* Snapshot Grid Elements */
+    .preview-section { background-color: var(--bg-light); padding: 100px 50px; }
+    @media (max-width: 768px) { .preview-section { padding: 60px 24px; } }
+    .section-header { max-width: 1200px; margin: 0 auto 50px auto; display: flex; justify-content: space-between; align-items: flex-end; }
+    .section-header h2 { font-size: 2.2rem; font-weight: 800; color: var(--brand-dark); }
+    .section-link { color: var(--brand-green-hover); text-decoration: none; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+    .section-link:hover { color: var(--brand-green); text-decoration: underline; }
 
-    .formula-row:last-child {
-      margin-bottom: 0;
-    }
+    .features-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .feature-card { background: var(--bg-white); padding: 45px 40px; border-left: 4px solid var(--brand-dark); }
+    .feature-title { font-size: 1.4rem; font-weight: 700; color: var(--brand-dark); margin: 0 0 15px 0; }
+    .feature-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
-    .formula-key {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--brand-green-hover);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .formula-val {
-      font-size: 1rem;
-      color: var(--text-muted);
-    }
-
-    .formula-operator {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--brand-dark);
-      margin: 10px 0;
-      display: block;
-    }
-
-    /* Infinite Marquee Ticker */
-    .ticker-wrap {
-      width: 100%;
-      background-color: var(--brand-dark);
-      padding: 22px 0;
-      overflow: hidden;
-    }
-
-    .ticker {
-      display: flex;
-      white-space: nowrap;
-      padding-left: 100%;
-      animation: marquee 30s linear infinite;
-    }
-
-    .ticker__item {
-      display: inline-block;
-      padding: 0 2.5rem;
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      letter-spacing: 2px;
-    }
-
-    .ticker__item span {
-      color: var(--brand-green);
-    }
-
-    @keyframes marquee {
-      0% { transform: translate3d(0, 0, 0); }
-      100% { transform: translate3d(-100%, 0, 0); }
-    }
-
-    /* Capabilities Preview Grid */
-    .preview-section {
-      background-color: var(--bg-light);
-      padding: 100px 50px;
-    }
-
-    @media (max-width: 768px) {
-      .preview-section { padding: 60px 24px; }
-    }
-
-    .section-header {
-      max-width: 1200px;
-      margin: 0 auto 50px auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .section-header h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--brand-dark);
-    }
-
-    .section-link {
-      color: var(--brand-green-hover);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .section-link:hover {
-      color: var(--brand-green);
-      text-decoration: underline;
-    }
-
-    .features-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .feature-card {
-      background: var(--bg-white);
-      padding: 45px 40px;
-      border-left: 4px solid var(--brand-dark);
-    }
-
-    .feature-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--brand-dark);
-      margin: 0 0 15px 0;
-    }
-
-    .feature-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Minimalist Footer */
-    footer {
-      background-color: var(--brand-dark);
-      color: #FFFFFF;
-      padding: 80px 50px;
-    }
-
-    @media (max-width: 768px) {
-      footer { padding: 60px 24px; }
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-
-    .footer-logo {
-      height: 50px;
-      width: auto;
-      align-self: flex-start;
-    }
-
-    .footer-left h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
-
-    .footer-left p {
-      color: #BBBBBB;
-      max-width: 400px;
-    }
-
-    .footer-right {
-      display: flex;
-      gap: 60px;
-    }
-
-    .footer-col h5 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--brand-green);
-      margin-bottom: 15px;
-    }
-
-    .footer-col p {
-      font-size: 0.95rem;
-      color: #BBBBBB;
-      line-height: 1.8;
-    }
+    /* Dark Footer Panel */
+    footer { background-color: var(--brand-dark); color: #FFFFFF; padding: 80px 50px; }
+    @media (max-width: 768px) { footer { padding: 60px 24px; } }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+    .footer-left { display: flex; flex-direction: column; gap: 25px; }
+    
+    /* Global layout rule inversion to make dark text display white dynamically */
+    .footer-logo { height: 42px; width: auto; align-self: flex-start; filter: brightness(0) invert(1); }
+    
+    .footer-left h3 { font-size: 1.8rem; font-weight: 800; }
+    .footer-left p { color: #BBBBBB; max-width: 400px; }
+    .footer-right { display: flex; gap: 60px; }
+    .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-green); margin-bottom: 15px; }
+    .footer-col p { font-size: 0.95rem; color: #BBBBBB; line-height: 1.8; }
   </style>
 </head>
 <body>
 
+  <!-- SINGLE INSTANCE NAVIGATION BLOCK -->
   <header>
-    <a href="index.html" class="brand-link">
-      <img class="brand-logo" src="./logo.png" alt="Finger Digital Logo">
+    <a href="/index.html" class="brand-link">
+      <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo">
+      <span style="font-family: inherit; font-size: 1.25rem; font-weight: 900; color: #162E1C; letter-spacing: 1.5px; text-transform: uppercase;">FINGER DIGITAL</span>
     </a>
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
+      <a href="/index.html" class="active">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/about.html">About Us</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </header>
 
+  <!-- SINGLE INSTANCE HERO SECTION -->
   <section class="hero-section">
     <div class="hero-left">
       <h1>The Digital Agency.<br>We transform your perception into excellent applications.</h1>
-      <a href="contact.html" class="cta-btn">Work With Us</a>
+      <a href="/contact.html" class="cta-btn">Work With Us</a>
     </div>
     
     <div class="hero-right">
@@ -390,27 +201,23 @@
       <div class="ticker__item">HARDWARE & SOFTWARE INTEGRATION <span>•</span> MORE SALES</div>
       <div class="ticker__item">HAPPY CLIENTS <span>•</span> EXCELLENT UI</div>
       <div class="ticker__item">LEVEL UP YOUR BRAND <span>•</span> LESS HEADACHES</div>
-      <div class="ticker__item">FINGER DIGITAL <span>•</span> MORE REVENUE</div>
-      <div class="ticker__item">HARDWARE & SOFTWARE INTEGRATION <span>•</span> MORE SALES</div>
     </div>
   </div>
 
   <section class="preview-section">
     <div class="section-header">
       <h2>Our Focus</h2>
-      <a href="services.html" class="section-link">View All Capabilities &rarr;</a>
+      <a href="/services.html" class="section-link">View All Capabilities &rarr;</a>
     </div>
     <div class="features-container">
       <div class="feature-card">
         <h3 class="feature-title">Digital Marketing</h3>
         <p class="feature-desc">We map out your digital footprint using precision data models to target and capture the right audience sectors metrics.</p>
       </div>
-      
       <div class="feature-card">
         <h3 class="feature-title">User Experience</h3>
         <p class="feature-desc">Structuring clean, friction-free design templates built to mirror natural human workflows and maximize retention.</p>
       </div>
-
       <div class="feature-card">
         <h3 class="feature-title">Development</h3>
         <p class="feature-desc">Immaculate code systems and hardware engineering alignment ensuring lightning fast speeds and secure infrastructure.</p>
@@ -418,472 +225,11 @@
     </div>
   </section>
 
+  <!-- SINGLE INSTANCE FOOTER BLOCK -->
   <footer>
     <div class="footer-content">
       <div class="footer-left">
-        <img class="footer-logo" src="./logo.png" alt="Finger Digital Logo">
-        <h3>Let's level up.</h3>
-        <p>Ready to structurally convert your technical vision into scalable web infrastructure?</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-col">
-          <h5>Inquiries</h5>
-          <p>hello@fingerdigital.com<br>+1 (555) 019-2831</p>
-        </div>
-        <div class="footer-col">
-          <h5>Studio</h5>
-          <p>248 Vector Blvd, Suite 10<br>Austin, TX 78701</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FINGER DIGITAL | Home</title>
-  <style>
-    :root {
-      --brand-green: #8AD621;
-      --brand-green-hover: #21870A;
-      --brand-dark: #162E1C;
-      --bg-light: #F9F9F9;
-      --bg-white: #FFFFFF;
-      --text-main: #333333;
-      --text-muted: #666666;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background-color: var(--bg-white);
-      color: var(--text-main);
-      overflow-x: hidden;
-      line-height: 1.5;
-    }
-
-    /* Horizontal Brand Header Layout */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #EEEEEE;
-    }
-
-    .brand-link {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      text-decoration: none;
-    }
-
-    .brand-logo {
-      height: 45px;
-      width: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      font-family: 'DIN Neuzeit Grotesk', 'Oswald', 'Montserrat', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--brand-dark);
-      text-transform: uppercase;
-      line-height: 1;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--brand-dark);
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-left: 35px;
-      position: relative;
-      transition: color 0.2s ease;
-    }
-
-    nav a.active {
-      color: var(--brand-green-hover);
-    }
-
-    nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--brand-green-hover);
-    }
-
-    nav a:hover {
-      color: var(--brand-green-hover);
-    }
-
-    @media (max-width: 768px) {
-      header { padding: 15px 24px; }
-      nav a { margin-left: 20px; font-size: 0.85rem; }
-      .logo-text { font-size: 1.1rem; letter-spacing: 0px; }
-      .brand-logo { height: 35px; }
-    }
-
-    /* Hero Section */
-    .hero-section {
-      padding: 180px 50px 100px 50px;
-      max-width: 1300px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    @media (max-width: 968px) {
-      .hero-section {
-        grid-template-columns: 1fr;
-        padding: 140px 24px 60px 24px;
-        gap: 40px;
-      }
-    }
-
-    .hero-left h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.15;
-      color: var(--brand-dark);
-      letter-spacing: -1px;
-      margin-bottom: 35px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-left h1 { font-size: 2.5rem; }
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background-color: var(--brand-dark);
-      color: #FFFFFF;
-      padding: 16px 36px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: background-color 0.2s ease;
-    }
-
-    .cta-btn:hover {
-      background-color: var(--brand-green-hover);
-    }
-
-    .formula-container {
-      background-color: var(--bg-light);
-      padding: 40px;
-      border-right: 4px solid var(--brand-green);
-    }
-
-    .formula-row {
-      margin-bottom: 25px;
-    }
-
-    .formula-row:last-child {
-      margin-bottom: 0;
-    }
-
-    .formula-key {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--brand-green-hover);
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .formula-val {
-      font-size: 1rem;
-      color: var(--text-muted);
-    }
-
-    .formula-operator {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--brand-dark);
-      margin: 10px 0;
-      display: block;
-    }
-
-    /* Infinite Marquee Ticker */
-    .ticker-wrap {
-      width: 100%;
-      background-color: var(--brand-dark);
-      padding: 22px 0;
-      overflow: hidden;
-    }
-
-    .ticker {
-      display: flex;
-      white-space: nowrap;
-      padding-left: 100%;
-      animation: marquee 30s linear infinite;
-    }
-
-    .ticker__item {
-      display: inline-block;
-      padding: 0 2.5rem;
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      letter-spacing: 2px;
-    }
-
-    .ticker__item span {
-      color: var(--brand-green);
-    }
-
-    @keyframes marquee {
-      0% { transform: translate3d(0, 0, 0); }
-      100% { transform: translate3d(-100%, 0, 0); }
-    }
-
-    /* Capabilities Preview Grid */
-    .preview-section {
-      background-color: var(--bg-light);
-      padding: 100px 50px;
-    }
-
-    @media (max-width: 768px) {
-      .preview-section { padding: 60px 24px; }
-    }
-
-    .section-header {
-      max-width: 1200px;
-      margin: 0 auto 50px auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .section-header h2 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--brand-dark);
-    }
-
-    .section-link {
-      color: var(--brand-green-hover);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .section-link:hover {
-      color: var(--brand-green);
-      text-decoration: underline;
-    }
-
-    .features-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .feature-card {
-      background: var(--bg-white);
-      padding: 45px 40px;
-      border-left: 4px solid var(--brand-dark);
-    }
-
-    .feature-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--brand-dark);
-      margin: 0 0 15px 0;
-    }
-
-    .feature-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Footer Styling */
-    footer {
-      background-color: var(--brand-dark);
-      color: #FFFFFF;
-      padding: 80px 50px;
-    }
-
-    @media (max-width: 768px) {
-      footer { padding: 60px 24px; }
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .footer-left {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    /* Mono light rule adjustments for footer branding text */
-    .footer-brand .logo-text {
-      color: #FFFFFF;
-    }
-
-    .footer-left h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-top: 10px;
-    }
-
-    .footer-left p {
-      color: #BBBBBB;
-      max-width: 400px;
-    }
-
-    .footer-right {
-      display: flex;
-      gap: 60px;
-    }
-
-    .footer-col h5 {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--brand-green);
-      margin-bottom: 15px;
-    }
-
-    .footer-col p {
-      font-size: 0.95rem;
-      color: #BBBBBB;
-      line-height: 1.8;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <a href="index.html" class="brand-link">
-      <img class="brand-logo" src="hand only.png" alt="Finger Digital Icon">
-      <div class="logo-text">Finger Digital</div>
-    </a>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero-section">
-    <div class="hero-left">
-      <h1>The Digital Agency.<br>We transform your perception into excellent applications.</h1>
-      <a href="contact.html" class="cta-btn">Work With Us</a>
-    </div>
-    
-    <div class="hero-right">
-      <div class="formula-container">
-        <div class="formula-row">
-          <span class="formula-key">We.</span>
-          <span class="formula-val">Drill down and understand your hardware and software needs.</span>
-        </div>
-        <span class="formula-operator">+</span>
-        <div class="formula-row">
-          <span class="formula-key">You.</span>
-          <span class="formula-val">Provide your project vision, grab a coffee, and wait.</span>
-        </div>
-        <span class="formula-operator">=</span>
-        <div class="formula-row">
-          <span class="formula-key">Us.</span>
-          <span class="formula-val">Together, let's level up your digital presence.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="ticker-wrap">
-    <div class="ticker">
-      <div class="ticker__item">FINGER DIGITAL <span>•</span> MORE REVENUE</div>
-      <div class="ticker__item">HARDWARE & SOFTWARE INTEGRATION <span>•</span> MORE SALES</div>
-      <div class="ticker__item">HAPPY CLIENTS <span>•</span> EXCELLENT UI</div>
-      <div class="ticker__item">LEVEL UP YOUR BRAND <span>•</span> LESS HEADACHES</div>
-      <div class="ticker__item">FINGER DIGITAL <span>•</span> MORE REVENUE</div>
-      <div class="ticker__item">HARDWARE & SOFTWARE INTEGRATION <span>•</span> MORE SALES</div>
-    </div>
-  </div>
-
-  <section class="preview-section">
-    <div class="section-header">
-      <h2>Our Focus</h2>
-      <a href="services.html" class="section-link">View All Capabilities &rarr;</a>
-    </div>
-    <div class="features-container">
-      <div class="feature-card">
-        <h3 class="feature-title">Digital Marketing</h3>
-        <p class="feature-desc">We map out your digital footprint using precision data models to target and capture the right audience sectors metrics.</p>
-      </div>
-      
-      <div class="feature-card">
-        <h3 class="feature-title">User Experience</h3>
-        <p class="feature-desc">Structuring clean, friction-free design templates built to mirror natural human workflows and maximize retention.</p>
-      </div>
-
-      <div class="feature-card">
-        <h3 class="feature-title">Development</h3>
-        <p class="feature-desc">Immaculate code systems and hardware engineering alignment ensuring lightning fast speeds and secure infrastructure.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-left">
-        <div class="footer-brand">
-          <img class="brand-logo" src="hand only.png" alt="Finger Digital Icon">
-          <div class="logo-text">Finger Digital</div>
-        </div>
+        <img class="footer-logo" src="/logo.png" alt="Finger Digital Logo">
         <h3>Let's level up.</h3>
         <p>Ready to structurally convert your technical vision into scalable web infrastructure?</p>
       </div>
