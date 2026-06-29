@@ -61,19 +61,37 @@
     .inner-hero { padding: 180px 50px 80px 50px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid #EEEEEE; }
     .inner-hero h1 { font-size: 3.5rem; font-weight: 800; color: var(--brand-dark); margin-bottom: 20px; letter-spacing: -1px; }
     .inner-hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; }
+    
     .matrix-section { padding: 100px 50px; max-width: 1200px; margin: 0 auto; }
-    .matrix-row { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; margin-bottom: 80px; }
+    .matrix-row { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; margin-bottom: 100px; align-items: start; }
     .matrix-row:last-child { margin-bottom: 0; }
+    
     .matrix-meta h2 { font-size: 2rem; font-weight: 800; color: var(--brand-dark); position: sticky; top: 120px; }
     .matrix-meta h2 span { color: var(--brand-green-hover); display: block; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-    .capability-block { background-color: var(--bg-light); padding: 40px; margin-bottom: 30px; border-left: 4px solid var(--brand-dark); }
-    .capability-block:last-child { margin-bottom: 0; }
-    .capability-block:hover { border-left-color: var(--brand-green-hover); }
-    .capability-block h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--brand-dark); }
-    .capability-block p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    
+    .capability-block { background-color: var(--bg-light); padding: 40px; border-left: 4px solid var(--brand-dark); transition: all 0.2s ease; }
+    .capability-block:hover { border-left-color: var(--brand-green-hover); background-color: #F1F5EB; }
+    .capability-block h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--brand-dark); font-weight: 800; }
+    .capability-block p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 25px; }
+    
+    /* Layout styling variables for custom asset containers */
+    .service-image-frame {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      margin-bottom: 0;
+      border: 1px solid #E5E5E5;
+    }
+    .service-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     @media (max-width: 968px) {
       .matrix-section { padding: 60px 24px; }
-      .matrix-row { grid-template-columns: 1fr; gap: 30px; margin-bottom: 60px; }
+      .matrix-row { grid-template-columns: 1fr; gap: 30px; margin-bottom: 70px; }
       .matrix-meta h2 { position: static; }
     }
     footer { background-color: var(--brand-dark); color: #FFFFFF; padding: 80px 50px; }
@@ -104,41 +122,76 @@
   </header>
 
   <div class="inner-hero">
-    <h1>Capabilities</h1>
-    <p>We provide full-spectrum technological transformation architectures across physical automation endpoints and secure application stacks.</p>
+    <h1>Our Services</h1>
+    <p>Providing high-tier technical systems, strategic engineering insights, and scalable technical personnel deployment frameworks globally.</p>
   </div>
 
   <section class="matrix-section">
+    
+    <!-- SERVICE BLOCK 1: AI TECHNOLOGY DEPLOYMENT -->
     <div class="matrix-row">
       <div class="matrix-meta">
-        <h2><span>01 / Infrastructure</span>Hardware Integration</h2>
+        <h2><span>01 / Deployment</span>AI Technology</h2>
       </div>
       <div class="matrix-content">
         <div class="capability-block">
-          <h3>Industrial Control Systems</h3>
-          <p>Structuring industrial logic profiles, fieldbus configuration mapping, and determinism loops utilizing modern automation ecosystems for manufacturing pipelines.</p>
-        </div>
-        <div class="capability-block">
-          <h3>Embedded Firmware & Bus Topologies</h3>
-          <p>Developing low-level device drivers and custom real-time application profiles spanning modular transceivers, standard communication protocols, and industrial bus control.</p>
+          <div class="service-image-frame" style="margin-bottom: 25px;">
+            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRmbh8Qk8NVJC3WmbiQIvyRKD6pSlxgD647sjSyct7LSB0iKo-Uytpt2py9ATqnpUCJNHxguLej5gMRH74" alt="Agentic AI Technology Infrastructure Stack Framework">
+          </div>
+          <h3>AI Technology Deployment</h3>
+          <p>Integrating tailored transformer architectures, autonomous agentic intelligence infrastructure, and vector database optimization profiles straight into core enterprise pipelines. We bridge industrial workflows with high-capacity analytical models securely.</p>
         </div>
       </div>
     </div>
+
+    <!-- SERVICE BLOCK 2: IT SOLUTION PROVIDER -->
     <div class="matrix-row">
       <div class="matrix-meta">
-        <h2><span>02 / Digital</span>Software Ecosystems</h2>
+        <h2><span>02 / Architecture</span>Solution Design</h2>
       </div>
       <div class="matrix-content">
         <div class="capability-block">
-          <h3>Full-Stack Application Development</h3>
-          <p>Engineering robust internal application backends and fast browser-side interfaces designed to handle high-concurrency hardware analytics data processing pipelines flawlessly.</p>
-        </div>
-        <div class="capability-block">
-          <h3>UX Workflow Architecture</h3>
-          <p>Mapping completely flat, logical interaction wireframes optimized for rapid operation control panels, minimizing operational errors and increasing interface visibility metrics.</p>
+          <div class="service-image-frame" style="margin-bottom: 25px;">
+            <img src="https://static.vecteezy.com/system/resources/previews/042/972/045/non_2x/abstract-initial-letter-sp-or-ps-logo-in-green-color-isolated-on-multiple-background-colors-the-logo-is-suitable-for-business-and-consulting-company-logo-icons-to-design-inspiration-templates-vector.jpg" alt="Abstract Corporate Enterprise IT Consulting Solutions Vector Profile">
+          </div>
+          <h3>IT Solution Provider</h3>
+          <p>Architecting robust technical Blueprints across full-stack applications, data lakehouses, and custom business management systems. Our engineering maps transform complex legacy friction parameters into streamlined system nodes.</p>
         </div>
       </div>
     </div>
+
+    <!-- SERVICE BLOCK 3: IT MANAGED SERVICE PROVIDER -->
+    <div class="matrix-row">
+      <div class="matrix-meta">
+        <h2><span>03 / Operations</span>Managed Systems</h2>
+      </div>
+      <div class="matrix-content">
+        <div class="capability-block">
+          <div class="service-image-frame" style="margin-bottom: 25px;">
+            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSxpLGUa9V3jsLMeu3dcbodVVHBL3zOW4NCnZRTcg8LM6lezz8xCriwacFHFmNezt9qsdGtIhHE2TL10co" alt="Network Operations Monitoring Security Center View">
+          </div>
+          <h3>IT Managed Service Provider</h3>
+          <p>Executing continuous remote surveillance monitoring metrics, threat prevention analysis, data recovery protocols, and network topology maintenance checks. We insulate technical infrastructures from system failures with near-zero latency down-times.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICE BLOCK 4: IT WORKFORCE PROVIDER -->
+    <div class="matrix-row">
+      <div class="matrix-meta">
+        <h2><span>04 / Talent</span>Workforce Staffing</h2>
+      </div>
+      <div class="matrix-content">
+        <div class="capability-block">
+          <div class="service-image-frame" style="margin-bottom: 25px;">
+            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTSAnaDeqEliMNUA06FbTJ9cV2K2RFtfdQcsbw5EVVytl9HNrrJSVW8gsvHf8b1gBZhxLZvqWsprJpKG4A" alt="Professional Tech Engineering Workforce Team Collaboration">
+          </div>
+          <h3>IT Workforce Provider</h3>
+          <p>Supplying highly vet-verified engineering talent pipelines, systems operators, cloud specialists, and full-stack software contractors. We provision tactical personnel support frameworks scaled immediately to meet project timeline objectives.</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <footer>
