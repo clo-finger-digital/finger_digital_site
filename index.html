@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FINGER DIGITAL | Home</title>
+  <title>Finger Digital | High-Performance Web Applications & Software Systems</title>
+  <meta name="description" content="Finger Digital designs and engineers bespoke web applications, custom software solutions, and high-performance digital infrastructure built to scale business operations globally.">
+  <link rel="canonical" href="https://subtle-biscochitos-106a9b.netlify.app/">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#162E1C">
   <style>
     :root {
       --brand-green: #8AD621;
@@ -54,7 +58,7 @@
     }
 
     .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand-logo { height: 42px; width: auto; display: block; object-fit: contain; }
+    .brand-logo { height: 42px; width: 42px; display: block; object-fit: contain; }
     nav { display: flex; align-items: center; }
     nav a {
       text-decoration: none;
@@ -74,7 +78,7 @@
     @media (max-width: 768px) {
       header { padding: 15px 24px; }
       nav a { margin-left: 20px; font-size: 0.85rem; }
-      .brand-logo { height: 32px; }
+      .brand-logo { height: 32px; width: 32px; }
     }
 
     .hero-section {
@@ -145,22 +149,30 @@
     @media (max-width: 768px) { footer { padding: 60px 24px; } }
     .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
     .footer-left { display: flex; flex-direction: column; gap: 25px; }
-    .footer-logo { height: 42px; width: auto; align-self: flex-start; filter: brightness(0) invert(1); }
+    .footer-logo { height: 42px; width: 42px; align-self: flex-start; filter: brightness(0) invert(1); }
     .footer-left h3 { font-size: 1.8rem; font-weight: 800; }
     .footer-left p { color: #BBBBBB; max-width: 400px; }
     .footer-right { display: flex; gap: 60px; }
     .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-green); margin-bottom: 15px; }
     .footer-col p { font-size: 0.95rem; color: #BBBBBB; line-height: 1.8; }
+    
+    .skip-link {
+      position: absolute; top: -100px; left: 0; background: var(--brand-green-hover); color: white;
+      padding: 10px 20px; z-index: 2000; font-weight: bold; transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 0; }
   </style>
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header class="reveal-node">
     <a href="/index.html" class="brand-link">
-      <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo">
+      <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo" width="42" height="42">
       <span style="font-family: inherit; font-size: 1.25rem; font-weight: 900; color: #162E1C; letter-spacing: 1.5px; text-transform: uppercase;">FINGER DIGITAL</span>
     </a>
-    <nav>
+    <nav aria-label="Primary Navigation">
       <a href="/index.html" class="active">Home</a>
       <a href="/services.html">Services</a>
       <a href="/about.html">About Us</a>
@@ -168,56 +180,58 @@
     </nav>
   </header>
 
-  <section class="hero-section reveal-node delay-1">
-    <div class="hero-left">
-      <h1>The Digital Agency.<br>We transform your perception into excellent applications.</h1>
-      <a href="/contact.html" class="cta-btn">Work With Us</a>
-    </div>
-    <div class="hero-right">
-      <div class="formula-container">
-        <div class="formula-row"><span class="formula-key">We.</span><span class="formula-val">Drill down and understand your hardware and software needs.</span></div>
-        <span class="formula-operator">+</span>
-        <div class="formula-row"><span class="formula-key">You.</span><span class="formula-val">Provide your project vision, grab a coffee, and wait.</span></div>
-        <span class="formula-operator">=</span>
-        <div class="formula-row"><span class="formula-key">Us.</span><span class="formula-val">Together, let's level up your digital presence.</span></div>
+  <main id="main-content">
+    <section class="hero-section reveal-node delay-1">
+      <div class="hero-left">
+        <h1>The Digital Agency.<br>We transform your perception into excellent applications.</h1>
+        <a href="/contact.html" class="cta-btn">Work With Us</a>
       </div>
-    </div>
-  </section>
+      <div class="hero-right">
+        <div class="formula-container">
+          <div class="formula-row"><span class="formula-key">We.</span><span class="formula-val">Drill down and understand your hardware and software needs.</span></div>
+          <span class="formula-operator">+</span>
+          <div class="formula-row"><span class="formula-key">You.</span><span class="formula-val">Provide your project vision, grab a coffee, and wait.</span></div>
+          <span class="formula-operator">=</span>
+          <div class="formula-row"><span class="formula-key">Us.</span><span class="formula-val">Together, let's level up your digital presence.</span></div>
+        </div>
+      </div>
+    </section>
 
-  <div class="ticker-wrap reveal-node delay-2">
-    <div class="ticker">
-      <div class="ticker__item">FINGER DIGITAL <span>•</span> MORE REVENUE</div>
-      <div class="ticker__item">HARDWARE & SOFTWARE INTEGRATION <span>•</span> MORE SALES</div>
-      <div class="ticker__item">HAPPY CLIENTS <span>•</span> EXCELLENT UI</div>
-      <div class="ticker__item">LEVEL UP YOUR BRAND <span>•</span> LESS HEADACHES</div>
+    <div class="ticker-wrap reveal-node delay-2">
+      <div class="ticker">
+        <div class="ticker__item">FINGER DIGITAL <span>•</span> MORE REVENUE</div>
+        <div class="ticker__item">HARDWARE & SOFTWARE INTEGRATION <span>•</span> MORE SALES</div>
+        <div class="ticker__item">HAPPY CLIENTS <span>•</span> EXCELLENT UI</div>
+        <div class="ticker__item">LEVEL UP YOUR BRAND <span>•</span> LESS HEADACHES</div>
+      </div>
     </div>
-  </div>
 
-  <section class="preview-section reveal-node delay-2">
-    <div class="section-header">
-      <h2>Our Focus</h2>
-      <a href="/services.html" class="section-link">View All Capabilities &rarr;</a>
-    </div>
-    <div class="features-container">
-      <div class="feature-card">
-        <h3 class="feature-title">Digital Marketing</h3>
-        <p class="feature-desc">We map out your digital footprint using precision data models to target and capture the right audience sectors metrics.</p>
+    <section class="preview-section reveal-node delay-2">
+      <div class="section-header">
+        <h2>Our Focus</h2>
+        <a href="/services.html" class="section-link">View All Capabilities &rarr;</a>
       </div>
-      <div class="feature-card">
-        <h3 class="feature-title">User Experience</h3>
-        <p class="feature-desc">Structuring clean, friction-free design templates built to mirror natural human workflows and maximize retention.</p>
+      <div class="features-container">
+        <article class="feature-card">
+          <h3 class="feature-title">Digital Marketing</h3>
+          <p class="feature-desc">We map out your digital footprint using precision data models to target and capture the right audience sectors metrics.</p>
+        </article>
+        <article class="feature-card">
+          <h3 class="feature-title">User Experience</h3>
+          <p class="feature-desc">Structuring clean, friction-free design templates built to mirror natural human workflows and maximize retention.</p>
+        </article>
+        <article class="feature-card">
+          <h3 class="feature-title">Development</h3>
+          <p class="feature-desc">Immaculate code systems and hardware engineering alignment ensuring lightning fast speeds and secure infrastructure.</p>
+        </article>
       </div>
-      <div class="feature-card">
-        <h3 class="feature-title">Development</h3>
-        <p class="feature-desc">Immaculate code systems and hardware engineering alignment ensuring lightning fast speeds and secure infrastructure.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="reveal-node delay-2">
     <div class="footer-content">
       <div class="footer-left">
-        <img class="footer-logo" src="/logo.png" alt="Finger Digital Logo">
+        <img class="footer-logo" src="/logo.png" alt="Finger Digital Logo" width="42" height="42">
         <h3>Let's level up.</h3>
         <p>Ready to structurally convert your technical vision into scalable web infrastructure?</p>
       </div>
