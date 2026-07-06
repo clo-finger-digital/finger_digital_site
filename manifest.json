@@ -1,0 +1,29 @@
+{
+  "name": "Finger Digital",
+  "short_name": "FingerDigital",
+  "description": "Bespoke web applications, custom software solutions, and high-performance digital infrastructure.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#162E1C",
+  "orientation": "portrait-primary",
+  "categories": [
+    "business",
+    "productivity",
+    "developer tools"
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
