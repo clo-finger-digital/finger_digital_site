@@ -79,7 +79,25 @@
     @media (max-width: 768px) {
       header { padding: 15px 24px; }
       nav a { margin-left: 20px; font-size: 0.85rem; }
-      .brand-logo { height: 32px; width: 32px; }
+      .brand-logo { height: 32px; }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 12px 16px;
+      }
+      .brand-link span {
+        display: none; /* Hides textual 'FINGER DIGITAL' title on phones */
+      }
+      nav a {
+        margin-left: 12px;
+        font-size: 0.8rem;
+      }
+      nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
     }
 
     .hero-section {
