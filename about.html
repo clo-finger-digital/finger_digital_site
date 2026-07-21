@@ -57,6 +57,16 @@
     }
     .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .brand-logo { height: 42px; width: 42px; display: block; object-fit: contain; }
+    .brand-text {
+      font-family: inherit;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #162E1C;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-flex;
+      gap: 6px;
+    }
     nav { display: flex; align-items: center; }
     nav a {
       text-decoration: none;
@@ -70,17 +80,29 @@
     nav a.active { color: var(--brand-green-hover); }
     nav a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--brand-green-hover); }
     nav a:hover { color: var(--brand-green-hover); }
+    
     @media (max-width: 768px) {
       header { padding: 15px 24px; }
       nav a { margin-left: 20px; font-size: 0.85rem; }
       .brand-logo { height: 32px; width: 32px; }
     }
+
+    /* Mobile Header Layout - Stacks text on 2 rows */
     @media (max-width: 600px) {
-      header { padding: 12px 16px; }
-      .brand-link span { display: none; }
-      nav a { margin-left: 12px; font-size: 0.8rem; }
+      header { padding: 10px 14px; }
+      .brand-link { gap: 8px; }
+      .brand-text {
+        flex-direction: column;
+        font-size: 0.75rem;
+        line-height: 1;
+        letter-spacing: 1px;
+        gap: 2px;
+      }
+      .brand-logo { height: 28px; width: 28px; }
+      nav a { margin-left: 10px; font-size: 0.8rem; }
       nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
     }
+
     .inner-hero { padding: 180px 50px 80px 50px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid #EEEEEE; }
     .inner-hero h1 { font-size: 3.5rem; font-weight: 800; color: var(--brand-dark); margin-bottom: 20px; letter-spacing: -1px; }
     .inner-hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; }
@@ -118,7 +140,10 @@
   <header class="reveal-node">
     <a href="/index.html" class="brand-link">
       <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo" width="42" height="42">
-      <span style="font-family: inherit; font-size: 1.25rem; font-weight: 900; color: #162E1C; letter-spacing: 1.5px; text-transform: uppercase;">FINGER DIGITAL</span>
+      <span class="brand-text">
+        <span>FINGER</span>
+        <span>DIGITAL</span>
+      </span>
     </a>
     <nav aria-label="Primary Navigation">
       <a href="/index.html">Home</a>
