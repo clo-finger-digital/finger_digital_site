@@ -38,7 +38,7 @@
     .reveal-node {
       animation: fadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       will-change: transform, opacity;
-      opacity: 0; /* Prevents flash of unstyled layouts before loop execution */
+      opacity: 0;
     }
     .delay-1 { animation-delay: 0.15s; }
     .delay-2 { animation-delay: 0.3s; }
@@ -60,6 +60,16 @@
 
     .brand-link { display: flex; align-items: center; gap: 12px; text-decoration: none; }
     .brand-logo { height: 42px; width: 42px; display: block; object-fit: contain; }
+    .brand-text {
+      font-family: inherit;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #162E1C;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-flex;
+      gap: 6px;
+    }
     nav { display: flex; align-items: center; }
     nav a {
       text-decoration: none;
@@ -81,10 +91,20 @@
       nav a { margin-left: 20px; font-size: 0.85rem; }
       .brand-logo { height: 32px; width: 32px; }
     }
+
+    /* Mobile Header Layout - Stacks text on 2 rows */
     @media (max-width: 600px) {
-      header { padding: 12px 16px; }
-      .brand-link span { display: none; }
-      nav a { margin-left: 12px; font-size: 0.8rem; }
+      header { padding: 10px 14px; }
+      .brand-link { gap: 8px; }
+      .brand-text {
+        flex-direction: column;
+        font-size: 0.75rem;
+        line-height: 1;
+        letter-spacing: 1px;
+        gap: 2px;
+      }
+      .brand-logo { height: 28px; width: 28px; }
+      nav a { margin-left: 10px; font-size: 0.8rem; }
       nav { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
     }
 
@@ -177,7 +197,10 @@
   <header class="reveal-node">
     <a href="/index.html" class="brand-link">
       <img class="brand-logo" src="/logo.png" alt="Finger Digital Logo" width="42" height="42">
-      <span style="font-family: inherit; font-size: 1.25rem; font-weight: 900; color: #162E1C; letter-spacing: 1.5px; text-transform: uppercase;">FINGER DIGITAL</span>
+      <span class="brand-text">
+        <span>FINGER</span>
+        <span>DIGITAL</span>
+      </span>
     </a>
     <nav aria-label="Primary Navigation">
       <a href="/index.html" class="active">Home</a>
