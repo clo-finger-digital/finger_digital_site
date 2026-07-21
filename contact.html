@@ -120,31 +120,7 @@
     .footer-right { display: flex; gap: 60px; }
     .footer-col h5 { font-size: 0.85rem; text-transform: uppercase; color: var(--brand-green); margin-bottom: 15px; }
     .footer-col p { font-size: 0.95rem; color: #BBBBBB; line-height: 1.8; }
-
-        /* Responsive Nav Fix for Mobile Devices */
-    @media (max-width: 600px) {
-      header {
-        padding: 12px 16px !important; /* Reduce container side padding */
-      }
-    
-      /* Hide the textual brand title on phones so links have space */
-      .brand-link span {
-        display: none !important;
-      }
-    
-      /* Reduce spacing between navigation links */
-      nav a {
-        margin-left: 12px !important;
-        font-size: 0.8rem !important;
-      }
-    
-      /* Allow menu bar to gently scroll horizontally if necessary */
-      nav {
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    }
+    @media (max-width: 768px) { footer { padding: 60px 24px; } }
   </style>
 </head>
 <body>
